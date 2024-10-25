@@ -7,7 +7,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default tseslint.config(
   {
-    ignores: ['node_modules', 'dist', 'public'],
+    ignores: ['node_modules', 'dist', 'public']
   },
 
   /** js推荐配置 */
@@ -23,7 +23,7 @@ export default tseslint.config(
     semi: false,
     jsx: true,
     braceStyle: '1tbs',
-    arrowParens: 'always',
+    arrowParens: 'always'
   }),
 
   /**
@@ -33,7 +33,18 @@ export default tseslint.config(
     files: ['**/*.{js,mjs,cjs,vue}'],
     rules: {
       'no-console': 'warn',
-    },
+      '@stylistic/comma-dangle': ['error', 'never'],
+      'prettier/prettier': [
+        'warn',
+        {
+          singleQuote: true, // 单引号
+          semi: false, // 无分号
+          printWidth: 80, // 每行宽度至多80字符
+          trailingComma: 'none', // 不加对象|数组最后逗号
+          endOfLine: 'auto' // 换行符号不限制（win mac 不一致）
+        }
+      ]
+    }
   },
 
   /**
@@ -45,9 +56,9 @@ export default tseslint.config(
         ...globals.browser,
 
         /** 追加一些其他自定义全局规则 */
-        wx: true,
-      },
-    },
+        wx: true
+      }
+    }
   },
 
   /**
@@ -62,38 +73,28 @@ export default tseslint.config(
         ecmaVersion: 'latest',
         /** 允许在.vue 文件中使用 JSX */
         ecmaFeatures: {
-          jsx: true,
-        },
-      },
+          jsx: true
+        }
+      }
     },
     rules: {
       // 在这里追加 vue 规则
       // pretter 专注于代码的美观度 （格式化工具）
-      'prettier/prettier': [
-        'warn',
-        {
-          singleQuote: true, // 单引号
-          semi: false, // 无分号
-          printWidth: 80, // 每行宽度至多80字符
-          trailingComma: 'none', // 不加对象|数组最后逗号
-          endOfLine: 'auto', // 换行符号不限制（win mac 不一致）
-        },
-      ],
       'vue/no-mutating-props': [
         'error',
         {
-          shallowOnly: true,
-        },
+          shallowOnly: true
+        }
       ],
       // ESLint 关注于规范
       'vue/multi-word-component-names': [
         'warn',
         {
-          ignores: ['index'], // vue组件名称多单词组成（忽略index.vue）
-        },
+          ignores: ['index'] // vue组件名称多单词组成（忽略index.vue）
+        }
       ],
-      'no-undef': 'error',
-    },
+      'no-undef': 'error'
+    }
   },
 
   /**
@@ -102,8 +103,8 @@ export default tseslint.config(
   {
     files: ['**/*.{ts,tsx,vue}'],
     rules: {
-      'linebreak-style': ['error', 'unix'],
-    },
+      'linebreak-style': ['error', 'unix']
+    }
   },
 
   /**
@@ -111,5 +112,5 @@ export default tseslint.config(
    * 会合并根目录下的prettier.config.js 文件
    * @see https://prettier.io/docs/en/options
    */
-  eslintPluginPrettierRecommended,
+  eslintPluginPrettierRecommended
 )
