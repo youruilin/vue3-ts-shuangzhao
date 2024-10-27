@@ -30,7 +30,7 @@ export default tseslint.config(
    * javascript 规则
    */
   {
-    files: ['**/*.{js,mjs,cjs,vue}'],
+    files: ['**/*.{js,mjs,cjs,vue,ts}'],
     rules: {
       'no-console': 'warn',
       '@stylistic/comma-dangle': ['error', 'never'],
@@ -90,7 +90,7 @@ export default tseslint.config(
       'vue/multi-word-component-names': [
         'warn',
         {
-          ignores: ['index'] // vue组件名称多单词组成（忽略index.vue）
+          ignores: ['index', 'id', '404'] // vue组件名称多单词组成（忽略index.vue）
         }
       ],
       'no-undef': 'error'
