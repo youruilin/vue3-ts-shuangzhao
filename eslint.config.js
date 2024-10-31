@@ -23,7 +23,7 @@ export default tseslint.config(
     semi: false,
     jsx: true,
     braceStyle: '1tbs',
-    arrowParens: 'always'
+    arrowParens: 'as-needed'
   }),
 
   /**
@@ -32,14 +32,17 @@ export default tseslint.config(
   {
     files: ['**/*.{js,mjs,cjs,vue,ts}'],
     rules: {
-      'no-console': 'warn',
+      // 'no-console': 'warn',
       '@stylistic/comma-dangle': ['error', 'never'],
+      // 这里需要特别注意
+      // 必须严格按照这种数组包裹字符串的形式来定义规则, 否则会与其他规则发生未知的、随机的、难以排查的错误
+      '@stylistic/arrow-parens': ['error', 'as-needed'],
       'prettier/prettier': [
         'warn',
         {
           singleQuote: true, // 单引号
           semi: false, // 无分号
-          printWidth: 80, // 每行宽度至多80字符
+          printWidth: 100, // 每行宽度至多80字符
           trailingComma: 'none', // 不加对象|数组最后逗号
           endOfLine: 'auto' // 换行符号不限制（win mac 不一致）
         }
@@ -101,7 +104,7 @@ export default tseslint.config(
    * typescript 规则
    */
   {
-    files: ['**/*.{ts,tsx,vue}'],
+    files: ['**/*.{ts,tsx}'],
     rules: {
       'linebreak-style': ['error', 'unix']
     }

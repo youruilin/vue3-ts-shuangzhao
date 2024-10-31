@@ -6,6 +6,7 @@
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "baseUrl": ".",
+    // 这里配置了路径别名
     "paths": {
       "@/*": ["./src/*"],
       "@": ["./src"]

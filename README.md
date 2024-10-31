@@ -38,6 +38,37 @@ pnpm build
 pnpm lint
 ```
 
+# 静态资源
+assets
+  img                             // 图片资源
+    icon                          // icon 图标
+  css                             // 样式资源
+    style.css                     // 公用资源
+
+mkdir -p src/{assets/img/icon,assets/css}
+
+# 项目公共组件
+components
+  list                            // 列表文件
+    TaskList.vue                  // 任务列表组件
+    ContractList.vue              // 合约列表组件
+    MessageList.vue               // 消息列表组件
+    TalentList.vue                // 人才列表组件
+  FooterTabbar.vue                // 底部导航组件
+
+touch src/components/list/{TaskList.vue,ContractList.vue,MessageList.vue,TalentList.vue}
+
+# api 接口
+api
+  user.ts
+  task.ts
+  contract.ts
+  message.ts
+  my.ts
+  talent.ts
+
+touch src/api/{user.ts,task.ts,contract.ts,message.ts,my.ts,talent.ts}
+
 # 路由
 router
   index.ts                       // 路由管理主页

@@ -2,6 +2,7 @@
 
 <template>
   <RouterView />
+  <FooterTabbar></FooterTabbar>
 </template>
 
 <style scoped></style>
