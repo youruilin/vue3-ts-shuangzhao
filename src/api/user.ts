@@ -20,6 +20,7 @@ export function login(data: LoginData) {
     data
   })
 }
+
 // 协议文件接口
 export function getPolicy(data: { id: 17 }) {
   return request({

@@ -1,67 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import type { RouteRecordRaw } from 'vue-router'
-// const routes: Array<RouteRecordRaw> = [
-//   {
-//     path: '/login',
-//     component: () => import('@/views/login/index.vue')
-//   },
-//   {
-//     path: '/login/serviceAgree',
-//     component: () => import('@/views/login/serviceAgree.vue')
-//   },
-//   {
-//     path: '/login/privatePolicy',
-//     component: () => import('@/views/login/privatePolicy.vue')
-//   },
-//   {
-//     path: '/task',
-//     component: () => import('@/views/task/index.vue')
-//   },
-//   {
-//     path: '/task/search',
-//     component: () => import('@/views/task/taskSearch.vue')
-//   },
-//   {
-//     path: '/task/details/:id',
-//     component: () => import('@/views/task/taskDetails.vue')
-//   },
-//   {
-//     path: '/task/companySource/:id',
-//     component: () => import('@/views/task/companySource.vue')
-//   },
-//   {
-//     path: '/contract',
-//     component: () => import('@/views/contract/index.vue')
-//   },
-//   {
-//     path: '/contract/details/:id',
-//     component: () => import('@/views/contract/details.vue')
-//   },
-//   {
-//     path: '/contract/progress/:id',
-//     component: () => import('@/views/contract/progress.vue')
-//   },
-//   {
-//     path: '/message/progress',
-//     component: () => import('@/views/message/index.vue')
-//   },
-//   {
-//     path: '/message/systemList',
-//     component: () => import('@/views/message/systemList.vue')
-//   },
-//   {
-//     path: '/message/systemDetails/:id',
-//     component: () => import('@/views/message/systemDetails.vue')
-//   },
-//   {
-//     path: '/message/talk/:id',
-//     component: () => import('@/views/message/talk.vue')
-//   }
-// ]
-
-// import routes from 'virtual:generated-pages'
-
 import generatedRoutes from 'virtual:generated-pages'
+import { userStore } from '@/stores/user'
 const routes = [
   ...generatedRoutes
   // {
@@ -73,5 +12,24 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+// 增加全局导航守卫
+router.beforeEach((to, from, next) => {
+  const store = userStore()
+  // 验证token
+  if (store.token) {
+    next()
+  } else {
+    if (
+      to.path === '/login' ||
+      to.path === '/login/ServiceAgree' ||
+      to.path === '/login/PrivatePolicy'
+    ) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
 })
 export default router

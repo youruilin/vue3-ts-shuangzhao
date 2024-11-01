@@ -1,9 +1,11 @@
 <script setup lang="ts">
-/// <reference types="node" />
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { showToast } from 'vant'
+import { userStore } from '@/stores/user'
 import { getCode, login } from '@/api/user'
+
+const store = userStore()
 
 const router = useRouter()
 
@@ -51,18 +53,30 @@ const loginSubmit = async () => {
     accounts: state.accounts,
     code: state.code
   })
-  if (res) {
+  if (res.errCode === 200) {
+    // 登录成功 - 需要将返回的数据存起来 - 存到本地
     showToast('登录成功')
-    setTimeout(() => {
-      router.push('/')
-    }, 1000)
+    store.setUserInfo(res.data)
+
+    // 进入人才端
+    if (store.role == '1') {
+      router.push('/task')
+    }
+    // 进入管理端
+    if (store.role == '2') {
+      router.push('/talent')
+    }
+  } else {
+    showToast(res.msg)
   }
 }
+
+const onClickLeft = () => history.back()
 </script>
 
 <template>
   <div class="login-main">
-    <van-icon class="icon-left" name="arrow-left" />
+    <van-icon class="icon-left" name="arrow-left" @click="onClickLeft" />
     <div class="login-form">
       <h3>認証コードによるログイン</h3>
       <div class="login-form-item">
@@ -78,7 +92,7 @@ const loginSubmit = async () => {
       <div class="login-form-label">
         <van-checkbox v-model="state.checked">我已阅读</van-checkbox>
         <router-link to="/login/ServiceAgree">《IT企业平台服务协议》</router-link>和
-        <router-link to="/login/PrivacyPolicy">《隐私政策》</router-link>
+        <router-link to="/login/PrivatePolicy">《隐私政策》</router-link>
       </div>
     </div>
   </div>
