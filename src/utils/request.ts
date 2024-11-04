@@ -10,9 +10,11 @@ service.interceptors.request.use(
   config => {
     const token = window.localStorage.getItem('token')
     if (token) {
-      config.headers = {
-        'x-access-token': token
-      }
+      // config.headers = {
+      //   'x-access-token': token
+      // }
+      // 直接在 headers 对象上添加属性
+      config.headers['x-access-token'] = token
     }
     return config
   },

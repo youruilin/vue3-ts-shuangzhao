@@ -22,9 +22,9 @@ export function login(data: LoginData) {
 }
 
 // 协议文件接口
-export function getPolicy(data: { id: 17 }) {
+export function getPolicy(data: { id: number }) {
   return request({
-    url: 'policy_protocol/list',
+    url: '/policy_protocol/list',
     method: 'get',
     params: data
   })

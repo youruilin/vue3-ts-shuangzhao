@@ -2,7 +2,7 @@
 
 <template>
   <RouterView />
-  <FooterTabbar v-if="$route.path !== '/login'"></FooterTabbar>
+  <FooterTabbar v-if="!$route.path.startsWith('/login')"></FooterTabbar>
 </template>
 
 <style scoped></style>
