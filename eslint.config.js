@@ -4,7 +4,6 @@ import tseslint from 'typescript-eslint'
 import eslintPluginVue from 'eslint-plugin-vue'
 import stylistic from '@stylistic/eslint-plugin'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
-
 export default tseslint.config(
   {
     ignores: ['node_modules', 'dist', 'public']

@@ -12,7 +12,7 @@ const state = reactive({
 
 const taskList = reactive([{ id: 1 }, { id: 2 }])
 
-const closeCitySwitch = (name?: string) => {
+const closeCitySwitch = (name: string) => {
   if (name) {
     store.setCityValue(name)
   }

@@ -10,7 +10,7 @@ const state = ref({
 const onClickLeft = () => history.back()
 const getPolicyChange = async () => {
   const res = await getPolicy({
-    id: 16
+    id: 17
   })
   if (res) {
     state.value.htmlText = res.records[0].content

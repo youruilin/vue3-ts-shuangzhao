@@ -15,7 +15,7 @@ const getPolicyChange = async () => {
   if (res) {
     state.value.htmlText = res.records[0].content
   } else {
-    new Toast(res.msg)
+    new Toast('这里出错啦')
   }
 }
 

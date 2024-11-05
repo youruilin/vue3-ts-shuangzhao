@@ -56,6 +56,8 @@ const loginSubmit = async () => {
   if (res.errCode === 200) {
     // 登录成功 - 需要将返回的数据存起来 - 存到本地
     showToast('登录成功')
+    console.log(res)
+
     store.setUserInfo(res.data)
 
     // 进入人才端
