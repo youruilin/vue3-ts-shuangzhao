@@ -1,3 +1,5 @@
+import { defineStore } from 'pinia'
+
 // 在文件的顶部定义本地存储的数据类型
 interface UserInfo {
   user_info: {
@@ -7,7 +9,6 @@ interface UserInfo {
   token: string // token 应为字符串
 }
 
-import { defineStore } from 'pinia'
 export const userStore = defineStore({
   id: 'user',
   state: () => {

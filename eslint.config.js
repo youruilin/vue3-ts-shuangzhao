@@ -92,7 +92,7 @@ export default tseslint.config(
       'vue/multi-word-component-names': [
         'warn',
         {
-          ignores: ['index', 'id', '404'] // vue组件名称多单词组成（忽略index.vue）
+          ignores: ['index', '[id]', '404'] // vue组件名称多单词组成（忽略index.vue）
         }
       ],
       'no-undef': 'error'

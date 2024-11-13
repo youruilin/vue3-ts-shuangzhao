@@ -7,6 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    CompanySource: typeof import('./src/components/CompanySource.vue')['default']
+    CompanyTask: typeof import('./src/components/CompanyTask.vue')['default']
     ContractList: typeof import('./src/components/list/ContractList.vue')['default']
     copy: typeof import('./src/components/list/TalentList copy.vue')['default']
     FooterTabbar: typeof import('./src/components/FooterTabbar.vue')['default']
@@ -22,11 +24,19 @@ declare module 'vue' {
     TalentList: typeof import('./src/components/list/TalentList.vue')['default']
     TaskList: typeof import('./src/components/list/TaskList.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
+    VanActionBarButton: typeof import('vant/es')['ActionBarButton']
+    VanActionBarIcon: typeof import('vant/es')['ActionBarIcon']
     VanButton: typeof import('vant/es')['Button']
+    VanCell: typeof import('vant/es')['Cell']
     VanCheckbox: typeof import('vant/es')['Checkbox']
     VanIcon: typeof import('vant/es')['Icon']
+    VanList: typeof import('vant/es')['List']
     VanNavBar: typeof import('vant/es')['NavBar']
     VanPopup: typeof import('vant/es')['Popup']
+    VanPullRefresh: typeof import('vant/es')['PullRefresh']
+    VanSearch: typeof import('vant/es')['Search']
+    VanSwipe: typeof import('vant/es')['Swipe']
+    VanSwipeItem: typeof import('vant/es')['SwipeItem']
     VanTabbar: typeof import('vant/es')['Tabbar']
     VanTabbarItem: typeof import('vant/es')['TabbarItem']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']

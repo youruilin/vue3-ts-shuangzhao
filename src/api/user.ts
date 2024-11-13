@@ -31,7 +31,7 @@ interface LoginResponse {
   }
 }
 
-// 登录接口的携带参数类型
+// 登录接口的
 interface LoginData {
   accounts: string
   code: string
@@ -46,7 +46,7 @@ export function login(data: LoginData): Promise<LoginResponse> {
 }
 
 interface PolicyResponse {
-  records
+  records: { content: string }[]
 }
 
 // 协议文件接口

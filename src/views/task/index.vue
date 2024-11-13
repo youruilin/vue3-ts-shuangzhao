@@ -1,26 +1,112 @@
 <script lang="ts" setup>
 import { reactive, provide } from 'vue'
+import { useRouter } from 'vue-router'
 import TaskList from '@/components/list/TaskList.vue'
 import CitySwitch from './components/CitySwitch.vue'
+import TaskBanner from './components/TaskBanner.vue'
+import PositionType from './components/PositionType.vue'
+import TaskScreen from './components/TaskScreen.vue'
 import { taskStore } from '@/stores/task'
+
+import { taskAllList } from '@/api/task'
+import { showToast } from 'vant'
 
 const store = taskStore()
 
 const state = reactive({
-  citySwitch: false
+  citySwitch: false,
+  positionSwitch: false,
+  // positionValue: '',
+  screenSwitch: false,
+  serviceMode: '',
+  taskCycle: '',
+  taskList: [],
+  pageNum: 0,
+  pageSize: 10,
+  finished: false,
+  loading: false
 })
 
-const taskList = reactive([{ id: 1 }, { id: 2 }])
+const getTaskAllList = async () => {
+  // console.log(state.positionValue, store.positionValue)
+  // 在这里开始加载
+  state.loading = true
+  if (state.pageNum == 1) state.taskList = []
+  const res = await taskAllList({
+    position_name: store.positionValue,
+    service_mode: state.serviceMode,
+    task_cycle: state.taskCycle,
+    pageNum: state.pageNum,
+    pageSize: state.pageSize,
+    city: store.cityValue
+  })
+  if (res.records) {
+    state.taskList = state.taskList.concat(res.records)
+    // 加载状态结束
+    state.loading = false
+    if (state.taskList.length >= res.total) {
+      // 此时数据全部加载完成
+      state.finished = true
+    } else {
+      state.finished = false
+    }
+  } else {
+    showToast(res.msg)
+    state.loading = false
+  }
+}
+
+const onRefresh = () => {
+  console.log('onRefresh执行了')
+  state.pageNum = 1
+  getTaskAllList()
+}
 
 const closeCitySwitch = (name: string) => {
   if (name) {
     store.setCityValue(name)
+    onRefresh()
   }
   state.citySwitch = false
 }
+
+const closePositionType = (p?: string) => {
+  if (p) {
+    // state.positionValue = p
+    store.setPositionValue(p)
+    onRefresh()
+  }
+  state.positionSwitch = false
+}
+
+const closeTaskScreen = obj => {
+  if (obj) {
+    state.serviceMode = obj.mode
+    state.taskCycle = obj.cycle
+    onRefresh()
+  }
+  state.screenSwitch = false
+}
+
 provide('popup', {
-  closeCitySwitch
+  closeCitySwitch,
+  closePositionType,
+  closeTaskScreen
 })
+
+// List 会监听浏览器的滚动事件并计算列表的位置 - @load="onLoad"
+// 当列表底部与可视区域的距离小于 offset 时，List 会触发一次 load 事件
+// 经过实测, onLoad 函数在页面加载时会首先自动执行一次
+const onLoad = () => {
+  state.pageNum = state.pageNum + 1 // 正因为 onLoad 的自动执行, 导致首次调用 getTaskAllList() 函数前, 给 pageNum 赋值为 1 , 因此只返回 pageSize 中规定的数据量
+  getTaskAllList()
+  console.log('onLoad触底执行了一次')
+}
+
+const router = useRouter()
+const goSearch = () => {
+  router.push('/task/TaskSearch')
+}
 </script>
 
 <template>
@@ -31,16 +117,34 @@ provide('popup', {
         <strong>{{ store.cityValue }}</strong>
         <span></span>
       </div>
-      <input type="text" readonly placeholder="検索したい内容を入力してください" />
+      <input
+        type="text"
+        readonly
+        placeholder="検索したい内容を入力してください"
+        @click="goSearch"
+      />
       <router-link to="/message/SystemList" class="task-icon-message"></router-link>
     </div>
-    <!-- <banner></banner> -->
+    <TaskBanner></TaskBanner>
     <div class="task-title">
-      <h3>最新任务</h3>
-      <div class="task-position-pop">职位类型<span></span></div>
-      <div class="task-screen-pop">筛选<span></span></div>
+      <h3>最新のタスク</h3>
+      <div class="task-position-pop" @click="state.positionSwitch = true">
+        {{ store.positionValue || '职位类型' }}<span></span>
+      </div>
+      <div class="task-screen-pop" @click="state.screenSwitch = true">筛选<span></span></div>
     </div>
-    <TaskList :task-list="taskList"></TaskList>
+    <van-pull-refresh v-model="state.loading" success-text="刷新成功" @refresh="onRefresh">
+      <van-list
+        v-model:loading="state.loading"
+        :finished="state.finished"
+        finished-text="没有更多了"
+        @load="onLoad"
+      >
+        <TaskList :task-list="state.taskList"></TaskList>
+        <div v-if="!state.loading && state.taskList.length == 0" class="wy-no-data">暂无数据</div>
+      </van-list>
+    </van-pull-refresh>
+
     <!-- 切换城市弹框 -->
     <van-popup
       v-model:show="state.citySwitch"
@@ -49,6 +153,26 @@ provide('popup', {
       :style="{ width: '100%', height: '100%' }"
     >
       <CitySwitch></CitySwitch>
+    </van-popup>
+
+    <!-- 切换城市弹框 -->
+    <van-popup
+      v-model:show="state.positionSwitch"
+      duration="0"
+      position="top"
+      :style="{ width: '100%', height: '100%' }"
+    >
+      <PositionType></PositionType>
+    </van-popup>
+
+    <!-- 筛选条件弹框 -->
+    <van-popup
+      v-model:show="state.screenSwitch"
+      duration="0"
+      position="top"
+      :style="{ width: '100%', height: '100%' }"
+    >
+      <TaskScreen></TaskScreen>
     </van-popup>
   </div>
 </template>

@@ -19,7 +19,12 @@ router.beforeEach((to, from, next) => {
   const store = userStore()
   // 验证token
   if (store.token) {
-    next()
+    // 检查是否为首页路径，如果是则跳转到 /task
+    if (to.path === '/') {
+      next('/task')
+    } else {
+      next()
+    }
   } else {
     if (
       to.path === '/login' ||
@@ -32,4 +37,5 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
+
 export default router

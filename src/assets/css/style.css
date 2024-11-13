@@ -16,7 +16,7 @@ a{
 body {
   color: #333333;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #FFFFFF;
   font-size: 0.64rem;
   font-family: 'Microsoft YaHei';
 }
@@ -30,9 +30,12 @@ textarea{
 :root {
   .van-button--primary {
     background: linear-gradient(90deg, #FEA829, #FE8F27);
-    border-radius: 1.17rem;
+    /* border-radius: 1.17rem; */
     border: none;
     font-size: 0.96rem;
+  }
+  .van-nav-bar .van-icon{
+    color: #FE8F27;
   }
   .van-checkbox__icon--checked .van-icon {
     background-color: #FE9527;
