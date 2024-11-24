@@ -179,13 +179,21 @@ const goSearch = () => {
 
 <style lang="scss" scoped>
 .task-page {
+  position: relative; /* 确保父容器有定位 */
   background: #f9f9f9;
-  padding: 0 0.59rem 3rem;
+  padding: 3rem 0.59rem;
   min-height: calc(100vh - 3rem);
   .task-top {
+    position: fixed;
+    top: 0; /* 确保它从父容器顶部开始 */
+    left: 0.2rem; /* 或根据需要设置左边距 */
+    right: 0.2rem; /* 或根据需要设置左边距 */
     display: flex;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: #f9f9f9; /* 设置背景颜色确保不透明 */
+    // width: 100%; /* 确保宽度占满父容器 */
+    z-index: 10; /* 设置 z-index 确保其显示在页面上方 */
     .task-top-city {
       display: flex;
       align-items: center;

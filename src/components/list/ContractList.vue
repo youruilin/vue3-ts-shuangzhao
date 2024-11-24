@@ -1,46 +1,61 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-const { contractList } = defineProps({
-  contractList: {
-    type: Array,
-    default: () => []
-  }
-})
+import ProgressBar from '../ProgressBar.vue'
+
+// interface contractState {
+//   contract_name
+//   is_contract_type_text
+//   company_name
+//   contract_type
+//   start_cycle_time
+//   end_cycle_time
+//   signing_time
+//   contract_id
+// }
+
+// const { contractList } = defineProps<{
+//   contractList: contractState[]
+// }>()
+
+// 进一步实际测试发现，使用 defineProps 接受父组件的数据时
+// 采取直接解构的方式进行隐式声明也是可以的
+const { contractList } = defineProps<{
+  contractList
+}>()
+// 这样，就可以在子组件使用了，无论数据在第几层
+// 而无需对要使用的数据进行具体的 interface 声明
 
 const router = useRouter()
-const gotoDetail = item => {
-  router.push('/contract/ContractDetails/' + item.id)
+const gotoDetail = id => {
+  router.push('/contract/ContractDetails/' + id)
 }
 </script>
 
 <template>
-  <dl v-for="(item, index) in contractList" :key="index" @click="gotoDetail(item)">
+  <dl v-for="(item, index) in contractList" :key="index" @click="gotoDetail(item.contract_id)">
     <dd>
-      <h3>フロントエンド開発エンジニア</h3>
-      <span>履约中</span>
+      <h3>{{ item.contract_name }}</h3>
+      <span>{{ item.is_contract_type_text }}</span>
       <van-icon name="arrow" />
     </dd>
     <dt>
       <label>公司名称</label>
-      <span>北京朝阳私塾</span>
+      <span>{{ item.company_name }}</span>
     </dt>
     <dt>
       <label>合约类型</label>
-      <span>技术服务</span>
+      <span>{{ item.contract_type }}</span>
     </dt>
     <dt>
       <label>合约周期</label>
-      <span>签约时间</span>
+      <span>{{ item.start_cycle_time }}-{{ item.end_cycle_time }}</span>
     </dt>
     <dt>
-      <label>合约进度</label>
-      <span></span>
+      <label>签约时间</label>
+      <span>{{ item.signing_time }}</span>
     </dt>
-    <dt class="contract-progress">
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
+    <dt>
+      <ProgressBar :item="item"></ProgressBar>
     </dt>
   </dl>
 </template>
@@ -82,25 +97,6 @@ dl {
     }
     span {
       text-align: right;
-    }
-  }
-}
-.contract-progress {
-  display: flex;
-  height: 0.53rem;
-  width: 100%;
-  i {
-    flex: 1;
-    background: #f3f3f3;
-    margin: 0 1px;
-    .green {
-      background: #50d400;
-    }
-    .orange {
-      background: #fe9215;
-    }
-    .red {
-      background: #fe4800;
     }
   }
 }

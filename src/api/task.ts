@@ -88,6 +88,7 @@ export function taskDetail(data): Promise<detailResponse> {
   })
 }
 
+// 任务收藏
 interface taskCollectionResponse {
   data
   msg
@@ -97,6 +98,19 @@ export function taskCollection(data): Promise<taskCollectionResponse> {
   return request({
     url: '/course/TaskCollection',
     method: 'post',
+    data
+  })
+}
+
+// 热搜请求
+interface hotSearchResponse {
+  data
+  msg
+}
+export function hotSearch(data): Promise<hotSearchResponse> {
+  return request({
+    url: '/position/public/getHotSeach',
+    method: 'get',
     data
   })
 }

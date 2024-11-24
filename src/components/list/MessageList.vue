@@ -1,28 +1,38 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 
-const { messageList } = defineProps({
-  messageList: {
-    type: Array,
-    default: () => []
-  }
-})
+const { messageList, type } = defineProps<{
+  messageList
+  type: string
+}>()
 
 const router = useRouter()
-const gotoDetail = item => {
-  router.push('/message/MessageTalk/' + item.id)
+const gotoDetail = (things_id, receive_id) => {
+  if (type === 'system') {
+    router.push('/message/SystemList')
+  }
+  if (type === 'talk') {
+    router.push('/message/MessageTalk/' + things_id + '/' + receive_id)
+  }
 }
 </script>
 
 <template>
-  <dl v-for="(item, index) in messageList" :key="index" @click="gotoDetail(item)">
+  <dl
+    v-for="(item, index) in messageList"
+    :key="index"
+    @click="gotoDetail(item.things_id, item.receive_id)"
+  >
     <dd>
-      <img src="@/assets/img/icon/icon-message.png" />
-      <span></span>
+      <img v-if="item.receive_is_read" :src="item.receive_is_read" />
+      <img v-else src="@/assets/img/icon/icon-message.png" />
+      <span v-if="item.is_show"></span>
     </dd>
     <dt>
-      <h3>北京朝阳私塾株式会社<span>5分前</span></h3>
-      <p>这里是测试文字</p>
+      <h3>
+        {{ item.title }}<span>{{ item.create_time }}</span>
+      </h3>
+      <p>{{ item.content }}</p>
     </dt>
   </dl>
 </template>
@@ -42,6 +52,7 @@ dl {
     img {
       width: 2.61rem;
       height: 2.61rem;
+      border-radius: 50%;
     }
     span {
       position: absolute;

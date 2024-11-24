@@ -73,6 +73,10 @@ const loginSubmit = async () => {
   }
 }
 
+const handleFocus = () => {
+  state.accounts = '13321178501'
+}
+
 const onClickLeft = () => history.back()
 </script>
 
@@ -83,7 +87,12 @@ const onClickLeft = () => history.back()
       <h3>認証コードによるログイン</h3>
       <div class="login-form-item">
         <div class="icon-phone"></div>
-        <input v-model="state.accounts" placeholder="携帯電話番号を入力してください" type="text" />
+        <input
+          v-model="state.accounts"
+          placeholder="携帯電話番号を入力してください"
+          type="text"
+          @focus="handleFocus"
+        />
       </div>
       <div class="login-form-item">
         <div class="icon-code"></div>

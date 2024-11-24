@@ -9,8 +9,10 @@ import router from './router'
 // import { Button, NavBar, Tabbar, TabbarItem, Checkbox, Toast, Icon } from 'vant'
 
 import '@/utils/rem' // 引入 rem 适配方案
+import { directives } from '@/utils/common' // 引入防抖
 
 const app = createApp(App)
+directives(app) // 防抖注册
 
 app.use(createPinia())
 app.use(router)

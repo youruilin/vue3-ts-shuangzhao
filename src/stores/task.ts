@@ -24,6 +24,11 @@ interface getScreen {
   taskCycle
 }
 
+// 热搜列表数据类型声明
+interface hotSearch {
+  title
+}
+
 export const taskStore = defineStore({
   id: 'task',
   state: () => {
@@ -33,7 +38,8 @@ export const taskStore = defineStore({
       bannerList: [] as getBanner[],
       positionValue: '', // 从 localStorage 获取初始值
       positionList: [] as getPosition[],
-      screenList: {} as getScreen
+      screenList: {} as getScreen,
+      hotSearchList: [] as hotSearch[]
     }
   },
   actions: {
@@ -56,6 +62,9 @@ export const taskStore = defineStore({
     },
     setScreenList(data: getScreen) {
       this.screenList = data
+    },
+    setHotSearchList(data) {
+      this.hotSearchList = data
     }
   }
 })
