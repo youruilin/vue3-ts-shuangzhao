@@ -28,3 +28,10 @@ export function contractDetail(data): Promise<contractDetailResponse> {
 }
 
 // 合约签约/拒绝接口
+export function contractOpreation<T>(data): Promise<T> {
+  return request({
+    url: '/contract/isContract',
+    method: 'put',
+    data
+  })
+}

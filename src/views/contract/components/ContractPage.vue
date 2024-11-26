@@ -2,7 +2,10 @@
 import { reactive } from 'vue'
 import { contractList } from '@/api/contract'
 import ContractList from '@/components/list/ContractList.vue'
+import { contractStore } from '@/stores/conract'
 import { showToast } from 'vant'
+
+const store = contractStore()
 const tabs = [
   {
     type: 2,
@@ -25,7 +28,7 @@ const tabs = [
 // 该部分数据类型，因为具体是在子组件进行渲染，因此父组件没有充分的必要对这些数据进行类型声明
 
 const state = reactive({
-  type: tabs[0].type,
+  type: store.type || tabs[0].type,
   list: [],
   loading: false,
   activeIndex: 0
@@ -34,6 +37,9 @@ const state = reactive({
 const setTabList = type => {
   if (type === state.type) return
   state.type = type
+  store.setType(type)
+  // console.log(`点击了第${store.type}个标签`)
+
   getContractList()
 }
 

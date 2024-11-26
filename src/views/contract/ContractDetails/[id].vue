@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import { contractDetail } from '@/api/contract'
-import { Toast } from 'vant'
+import { contractDetail, contractOpreation } from '@/api/contract'
+import { showToast, Toast } from 'vant'
 import ProgresBar from '@/components/ProgressBar.vue'
 
 const router = useRouter()
@@ -60,6 +60,22 @@ const getContractDetail = async () => {
   }
 }
 getContractDetail()
+
+const putContractOpreation = async type => {
+  const res = await contractOpreation<{ meg }>({
+    is_contract_type: type,
+    contract_id: contractId
+  })
+
+  showToast(res.meg)
+}
+
+const refuseChange = () => {
+  putContractOpreation(5)
+}
+const confirmChange = () => {
+  putContractOpreation(3)
+}
 </script>
 
 <template>
@@ -118,8 +134,12 @@ getContractDetail()
   </dl>
   <div v-if="state.item" class="contract-btn">
     <button v-if="state.item.is_contract_type === 1" class="confirm-btn">发送合约</button>
-    <button v-if="state.item.is_contract_type === 2" class="refuse-btn">拒绝签约</button>
-    <button v-if="state.item.is_contract_type === 2" class="confirm-btn">确认签约</button>
+    <button v-if="state.item.is_contract_type === 2" v-debounce="refuseChange" class="refuse-btn">
+      拒绝签约
+    </button>
+    <button v-if="state.item.is_contract_type === 2" v-debounce="confirmChange" class="confirm-btn">
+      确认签约
+    </button>
     <button
       v-if="state.item.is_contract_type != 1 && state.item.is_contract_type != 2"
       class="confirm-btn"

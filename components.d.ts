@@ -22,6 +22,7 @@ declare module 'vue' {
     ProgressBar: typeof import('./src/components/ProgressBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScrollFooter: typeof import('./src/components/ScrollFooter.vue')['default']
     TalentList: typeof import('./src/components/list/TalentList.vue')['default']
     TaskList: typeof import('./src/components/list/TaskList.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
