@@ -65,19 +65,21 @@ const getChatMessageContent = async () => {
 }
 getChatMessageContent()
 
+const stopSetInterval = () => {
+  // 有就清除
+  if (state.creacteSetInterval) {
+    clearInterval(state.creacteSetInterval)
+    state.creacteSetInterval = null
+  }
+}
+
 const createInterval = () => {
   stopSetInterval()
   state.creacteSetInterval = setInterval(() => {
     getChatMessageContent()
   }, 5000)
 }
-
-const stopSetInterval = () => {
-  if (state.creacteSetInterval) {
-    clearInterval(state.creacteSetInterval)
-    state.creacteSetInterval = null
-  }
-}
+createInterval()
 
 const handleClickOutside = (event: MouseEvent) => {
   console.log('事件目标:', event.target)
@@ -103,8 +105,6 @@ onBeforeUnmount(() => {
   stopSetInterval()
   document.removeEventListener('click', handleClickOutside)
 })
-
-createInterval()
 
 const worksClick = () => {
   console.log('点击了常用语')
@@ -144,7 +144,7 @@ provide('popup', {
     </dl>
   </div>
   <transition name="fade"></transition>
-  <div ref="inputArea" class="talk-bottom">
+  <div ref="inputArea" :class="['talk-bottom', { 'talk-visible': state.worksVisible }]">
     <div class="talk-input">
       <span @click="worksClick">常用语</span>
       <input v-model="state.value" type="text" />
@@ -152,7 +152,7 @@ provide('popup', {
       <van-icon name="smile-o" @click="emojiClick" />
       <span>发送</span>
     </div>
-    <TalkWords v-if="state.worksVisible" ref="inputArea"></TalkWords>
+    <TalkWords v-show="state.worksVisible" ref="inputArea"></TalkWords>
   </div>
 </template>
 
@@ -271,5 +271,15 @@ dl {
     font-size: 1.36rem;
     margin-right: 0.4rem;
   }
+}
+
+.talk-bottom {
+  overflow: hidden; /* 隐藏内容超出部分 */
+  max-height: 100px; /* 初始的最大高度（较小的高度） */
+  transition: max-height 0.3s ease; /* 高度变化的平滑过渡 */
+}
+
+.talk-bottom.talk-visible {
+  max-height: 350px; /* 当显示时，设置较大的最大高度 */
 }
 </style>
