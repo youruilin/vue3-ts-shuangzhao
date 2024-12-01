@@ -3,9 +3,11 @@ import { reactive } from 'vue'
 import { systemDetails } from '@/api/message'
 import { showToast } from 'vant'
 
-const { id } = defineProps<{
-  id: string
-}>()
+import { useRoute } from 'vue-router'
+const route = useRoute()
+// 从当前路由中获取动态参数
+// const id = router.currentRoute.value.params.id
+const id = route.params.id
 
 const state = reactive({
   item: { title: '', content: '' }, // 默认空对象

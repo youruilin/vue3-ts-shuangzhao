@@ -25,3 +25,20 @@ export function chatMessageList<T>(): Promise<T> {
     method: 'get'
   })
 }
+
+// 对话消息聊天接口
+export function chatMessageContent<T>(data): Promise<T> {
+  return request({
+    url: '/it_chat/message/list',
+    method: 'get',
+    params: data
+  })
+}
+
+// 消息常用语列表
+export function chatMessageWordsList<T>(): Promise<T> {
+  return request({
+    url: '/it_chat/message/works/list',
+    method: 'get'
+  })
+}
