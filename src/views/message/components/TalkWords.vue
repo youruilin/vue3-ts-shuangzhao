@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject, reactive } from 'vue'
-
 import { chatMessageWordsList } from '@/api/message'
+import TalkWordsAdd from './TalkWordsAdd.vue'
 
 // 定义类型
 interface PopupContext {
@@ -12,7 +12,8 @@ const { wordsChange } = inject<PopupContext>('popup')! // 非空断言
 
 const state = reactive({
   loading: false,
-  list: [] as ChatMessageWordsListResponseItem[]
+  list: [] as ChatMessageWordsListResponseItem[],
+  talkWordsSwitch: false
 })
 
 interface ChatMessageWordsListResponseItem {
@@ -40,11 +41,26 @@ getChatMessageWordsList()
       </dt>
     </dl>
     <div class="talk-word-btn">
-      <p><img src="@/assets/img/icon/icon-add.png" alt="" />添加</p>
+      <p @click="state.talkWordsSwitch = true">
+        <img
+          src="@/assets/img/icon/icon-add.png"
+          alt=""
+          @click="state.talkWordsSwitch = true"
+        />添加
+      </p>
       <i></i>
       <p><img src="@/assets/img/icon/icon-file.png" alt="" />管理</p>
     </div>
   </div>
+  <!-- 添加常用于弹框 -->
+  <van-popup
+    v-model:show="state.talkWordsSwitch"
+    duration="0"
+    position="top"
+    :style="{ width: '100%', height: '100%' }"
+  >
+    <TalkWordsAdd></TalkWordsAdd>
+  </van-popup>
 </template>
 
 <style lang="scss" scoped>

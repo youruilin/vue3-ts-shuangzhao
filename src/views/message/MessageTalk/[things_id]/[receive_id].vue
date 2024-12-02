@@ -143,7 +143,6 @@ provide('popup', {
       </dt>
     </dl>
   </div>
-  <transition name="fade"></transition>
   <div ref="inputArea" :class="['talk-bottom', { 'talk-visible': state.worksVisible }]">
     <div class="talk-input">
       <span @click="worksClick">常用语</span>
@@ -152,7 +151,7 @@ provide('popup', {
       <van-icon name="smile-o" @click="emojiClick" />
       <span>发送</span>
     </div>
-    <TalkWords v-show="state.worksVisible" ref="inputArea"></TalkWords>
+    <TalkWords></TalkWords>
   </div>
 </template>
 
@@ -160,6 +159,7 @@ provide('popup', {
 .talk-page {
   width: 100%;
   background: #f3f3f3;
+  // 需要减去顶部 bar 的高度和ui稿件中底部组件的高度
   height: calc(100vh - 46px - 2.6rem);
   overflow: auto;
 }
@@ -275,7 +275,7 @@ dl {
 
 .talk-bottom {
   overflow: hidden; /* 隐藏内容超出部分 */
-  max-height: 100px; /* 初始的最大高度（较小的高度） */
+  max-height: 2.6rem; /* 初始的最大高度（较小的高度） */
   transition: max-height 0.3s ease; /* 高度变化的平滑过渡 */
 }
 
