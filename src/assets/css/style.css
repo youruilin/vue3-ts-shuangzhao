@@ -41,6 +41,10 @@ textarea{
     background-color: #FE9527;
     border: #FE9527;
   }
+  .van-popup.van-toast {
+    background: var(--van-toast-background) !important;
+    box-sizing: content-box !important;
+  }
 }
 .van-checkbox__icon{
   height: 0.75rem;

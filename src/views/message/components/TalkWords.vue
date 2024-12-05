@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { inject, reactive } from 'vue'
+import { inject, reactive, provide } from 'vue'
 import { chatMessageWordsList } from '@/api/message'
 import TalkWordsAdd from './TalkWordsAdd.vue'
+import TalkWordsManage from './TalkWordsManage.vue'
 
 // 定义类型
 interface PopupContext {
@@ -13,7 +14,8 @@ const { wordsChange } = inject<PopupContext>('popup')! // 非空断言
 const state = reactive({
   loading: false,
   list: [] as ChatMessageWordsListResponseItem[],
-  talkWordsSwitch: false
+  talkWordsSwitch: false,
+  talkWordsManage: false
 })
 
 interface ChatMessageWordsListResponseItem {
@@ -31,36 +33,56 @@ const getChatMessageWordsList = async () => {
   }
 }
 getChatMessageWordsList()
+
+const closeWordsAdd = () => {
+  state.talkWordsSwitch = false
+  getChatMessageWordsList()
+}
+const closeWordsManage = () => {
+  state.talkWordsManage = false
+  getChatMessageWordsList()
+}
+provide('popup', {
+  closeWordsAdd,
+  closeWordsManage
+})
 </script>
 
 <template>
   <div class="talk-word">
     <dl>
-      <dt v-for="(item, index) in state.list" :key="index" @click="wordsChange(item.text)">
+      <dt
+        v-for="(item, index) in state.list.slice().reverse()"
+        :key="index"
+        @click="wordsChange(item.text)"
+      >
         {{ item.text }}
       </dt>
     </dl>
     <div class="talk-word-btn">
-      <p @click="state.talkWordsSwitch = true">
-        <img
-          src="@/assets/img/icon/icon-add.png"
-          alt=""
-          @click="state.talkWordsSwitch = true"
-        />添加
-      </p>
+      <p @click="state.talkWordsSwitch = true"><img src="@/assets/img/icon/icon-add.png" />添加</p>
       <i></i>
-      <p><img src="@/assets/img/icon/icon-file.png" alt="" />管理</p>
+      <p @click="state.talkWordsManage = true"><img src="@/assets/img/icon/icon-file.png" />管理</p>
     </div>
+    <!-- 添加常用语弹框 -->
+    <van-popup
+      v-model:show="state.talkWordsSwitch"
+      duration="0.2"
+      position="right"
+      :style="{ width: '100%', height: '100%' }"
+    >
+      <TalkWordsAdd title="添加常用语"></TalkWordsAdd>
+    </van-popup>
+    <!-- 编辑常用语弹框 -->
+    <van-popup
+      v-model:show="state.talkWordsManage"
+      duration="0.2"
+      position="right"
+      :style="{ width: '100%', height: '100%' }"
+    >
+      <TalkWordsManage></TalkWordsManage>
+    </van-popup>
   </div>
-  <!-- 添加常用于弹框 -->
-  <van-popup
-    v-model:show="state.talkWordsSwitch"
-    duration="0"
-    position="top"
-    :style="{ width: '100%', height: '100%' }"
-  >
-    <TalkWordsAdd></TalkWordsAdd>
-  </van-popup>
 </template>
 
 <style lang="scss" scoped>

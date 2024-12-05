@@ -42,3 +42,28 @@ export function chatMessageWordsList<T>(): Promise<T> {
     method: 'get'
   })
 }
+
+// 常用语添加
+export function chatMessageWordsAdd<T>(data): Promise<T> {
+  return request({
+    url: 'it_chat/message/works/add',
+    method: 'post',
+    data
+  })
+}
+// 常用语编辑
+export function chatMessageWordsEdit<T>(data): Promise<T> {
+  return request({
+    url: 'it_chat/message/works/edit',
+    method: 'post',
+    data
+  })
+}
+// 常用语删除
+export function chatMessageWordsDelete<T>(data): Promise<T> {
+  return request({
+    url: 'it_chat/message/works/delete',
+    method: 'post',
+    data
+  })
+}

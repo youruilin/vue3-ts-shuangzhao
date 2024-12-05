@@ -3,6 +3,7 @@
 import { onBeforeUnmount, nextTick, onMounted, reactive, provide, ref } from 'vue'
 import { chatMessageContent } from '@/api/message'
 import TalkWords from '@/views/message/components/TalkWords.vue'
+import TalkEmoji from '../../components/TalkEmoji.vue'
 
 const leftBack = () => history.back()
 
@@ -41,7 +42,8 @@ const state = reactive({
   value: '',
   task_name: '',
   creacteSetInterval: null as ReturnType<typeof setInterval> | null,
-  worksVisible: false
+  worksVisible: false,
+  emojiVisible: false
 })
 
 const inputArea = ref<HTMLElement | null>(null)
@@ -89,7 +91,14 @@ const handleClickOutside = (event: MouseEvent) => {
     console.log('是否在 inputArea 外部:', isOutside)
     if (isOutside) {
       console.log('点击了以外的区域')
-      state.worksVisible = false
+      if (state.emojiVisible || state.worksVisible) {
+        inputArea.value.style.maxHeight = '2.6rem'
+        setTimeout(() => {
+          state.worksVisible = false
+          state.emojiVisible = false
+          console.log('延迟关闭常用语面板')
+        }, 300) // 延迟 300 毫秒
+      }
     }
   }
 }
@@ -108,11 +117,56 @@ onBeforeUnmount(() => {
 
 const worksClick = () => {
   console.log('点击了常用语')
-  state.worksVisible = !state.worksVisible
+  // 确定此时 dom 已加载
+  if (inputArea.value) {
+    // 添加空值检查，确保 inputArea.value 不为 null
+    if (state.worksVisible) {
+      // 如果已经展开，设置高度收起并延迟关闭
+      inputArea.value.style.maxHeight = '2.6rem'
+      setTimeout(() => {
+        state.worksVisible = !state.worksVisible
+        console.log('延迟关闭常用语面板')
+      }, 300) // 延迟 300 毫秒
+    } else {
+      // 如果未展开，立即打开并设置高度
+      state.worksVisible = !state.worksVisible
+      inputArea.value.style.maxHeight = '300px'
+      state.emojiVisible = false // 确保 emoji 面板关闭
+      console.log('立即打开常用语面板')
+    }
+  } else {
+    console.warn('inputArea.value is null')
+  }
 }
 
 const emojiClick = () => {
   console.log('emojiClick')
+  // 这里增加一个判断，判断快捷短语弹框是否开启
+  if (state.worksVisible) {
+    if (inputArea.value) {
+      // 使 300px - 210px 这一段高度变化附带过渡效果
+      inputArea.value.style.maxHeight = '210px'
+      setTimeout(() => {
+        state.worksVisible = !state.worksVisible
+        console.log('延迟关闭常用语面板')
+      }, 200) // 延迟 300 毫秒
+      state.emojiVisible = !state.emojiVisible
+    }
+  } else {
+    if (inputArea.value) {
+      if (state.emojiVisible) {
+        // 如果已经展开，设置高度收起并延迟关闭
+        inputArea.value.style.maxHeight = '2.6rem'
+        setTimeout(() => {
+          state.emojiVisible = !state.emojiVisible
+          console.log('延迟关闭常用语面板')
+        }, 300) // 延迟 300 毫秒
+      } else {
+        inputArea.value.style.maxHeight = '210px'
+        state.emojiVisible = !state.emojiVisible
+      }
+    }
+  }
 }
 
 const wordsChange = (value: string) => {
@@ -120,8 +174,14 @@ const wordsChange = (value: string) => {
   // state.worksVisible = false
 }
 
+const emojiChange = value => {
+  state.value = state.value + value
+  // state.emojiVisible = false
+}
+
 provide('popup', {
-  wordsChange
+  wordsChange,
+  emojiChange
 })
 </script>
 
@@ -143,7 +203,7 @@ provide('popup', {
       </dt>
     </dl>
   </div>
-  <div ref="inputArea" :class="['talk-bottom', { 'talk-visible': state.worksVisible }]">
+  <div ref="inputArea" :class="['talk-bottom']">
     <div class="talk-input">
       <span @click="worksClick">常用语</span>
       <input v-model="state.value" type="text" />
@@ -151,7 +211,8 @@ provide('popup', {
       <van-icon name="smile-o" @click="emojiClick" />
       <span>发送</span>
     </div>
-    <TalkWords></TalkWords>
+    <TalkWords v-show="state.worksVisible"></TalkWords>
+    <TalkEmoji v-show="state.emojiVisible"></TalkEmoji>
   </div>
 </template>
 
@@ -277,9 +338,5 @@ dl {
   overflow: hidden; /* 隐藏内容超出部分 */
   max-height: 2.6rem; /* 初始的最大高度（较小的高度） */
   transition: max-height 0.3s ease; /* 高度变化的平滑过渡 */
-}
-
-.talk-bottom.talk-visible {
-  max-height: 350px; /* 当显示时，设置较大的最大高度 */
 }
 </style>
