@@ -34,6 +34,14 @@ export function chatMessageContent<T>(data): Promise<T> {
     params: data
   })
 }
+// 对话消息聊天发送
+export function chatMessageContentAdd<T>(data): Promise<T> {
+  return request({
+    url: '/it_chat/add_message',
+    method: 'post',
+    data
+  })
+}
 
 // 消息常用语列表
 export function chatMessageWordsList<T>(): Promise<T> {

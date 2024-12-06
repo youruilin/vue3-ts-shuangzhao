@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /* eslint vue/prop-name-casing: "off" */
-import { onBeforeUnmount, nextTick, onMounted, reactive, provide, ref } from 'vue'
-import { chatMessageContent } from '@/api/message'
+import { onBeforeUnmount, nextTick, onMounted, reactive, provide, ref, watch } from 'vue'
+import { chatMessageContent, chatMessageContentAdd } from '@/api/message'
 import TalkWords from '@/views/message/components/TalkWords.vue'
 import TalkEmoji from '../../components/TalkEmoji.vue'
 
@@ -18,6 +18,28 @@ const { things_id: taskId, receive_id: receiveId } = defineProps<{
   things_id
   receive_id
 }>()
+
+const sentMessage = async () => {
+  state.loading = true
+  const res = await chatMessageContentAdd<{ msg }>({
+    receive_id: receiveId,
+    things_id: taskId,
+    content: state.value,
+    things_type: 0
+  })
+  if (res) {
+    getChatMessageContent()
+    state.value = ''
+    // if (inputArea.value) {
+    //   inputArea.value.style.maxHeight = '2.6rem'
+    //   setTimeout(() => {
+    //     state.worksVisible = false
+    //     state.emojiVisible = false
+    //   }, 300)
+    // }
+  }
+  showToast(res.msg)
+}
 
 // 在标签中，对数据进行循环遍历时，需要用到具体的数据，需要再这里声明
 interface chatMessageContentResponseItem {
@@ -48,6 +70,31 @@ const state = reactive({
 
 const inputArea = ref<HTMLElement | null>(null)
 
+// 显式声明 messageList 的类型为 HTMLDivElement
+const messageList = ref<HTMLDivElement | null>(null)
+
+const isFirstLoad = ref(true) // 标记首次加载
+
+const scrollToBottom = () => {
+  if (messageList.value) {
+    messageList.value.scrollTop = messageList.value.scrollHeight
+    console.log('确保执行了滚动')
+  }
+}
+
+watch(
+  () => state.list,
+  () => {
+    // 仅在首次加载时滚动
+    if (isFirstLoad.value) {
+      nextTick(() => {
+        scrollToBottom() // 确保在数据加载完成后滚动到底部
+      })
+      isFirstLoad.value = false // 修改标记，防止轮询时再次滚动
+    }
+  }
+)
+
 const getChatMessageContent = async () => {
   state.loading = true
   // 在这里传入对泛型进行替换
@@ -56,10 +103,14 @@ const getChatMessageContent = async () => {
     things_id: taskId,
     things_type: 0
   })
-
   if (res.data) {
     state.list = res.data
     state.task_name = (res.data[0] && res.data[0].task_name) || '任务'
+    if (isFirstLoad.value) {
+      await nextTick()
+      scrollToBottom()
+      isFirstLoad.value = false
+    }
   } else {
     showToast(res.msg)
   }
@@ -93,6 +144,12 @@ const handleClickOutside = (event: MouseEvent) => {
       console.log('点击了以外的区域')
       if (state.emojiVisible || state.worksVisible) {
         inputArea.value.style.maxHeight = '2.6rem'
+
+        // 安全检查 messageList.value 是否为 null
+        if (messageList.value) {
+          messageList.value.style.height = 'calc(100vh - 40px - 2.6rem)'
+        }
+
         setTimeout(() => {
           state.worksVisible = false
           state.emojiVisible = false
@@ -104,10 +161,12 @@ const handleClickOutside = (event: MouseEvent) => {
 }
 
 onMounted(() => {
+  scrollToBottom()
   // 在组件挂载时添加全局点击事件监听
   nextTick(() => {
     document.addEventListener('click', handleClickOutside)
   })
+  isFirstLoad.value = true // 页面重新加载时重置标志
 })
 
 onBeforeUnmount(() => {
@@ -118,11 +177,12 @@ onBeforeUnmount(() => {
 const worksClick = () => {
   console.log('点击了常用语')
   // 确定此时 dom 已加载
-  if (inputArea.value) {
+  if (inputArea.value && messageList.value) {
     // 添加空值检查，确保 inputArea.value 不为 null
     if (state.worksVisible) {
       // 如果已经展开，设置高度收起并延迟关闭
       inputArea.value.style.maxHeight = '2.6rem'
+      messageList.value.style.height = 'calc(100vh - 40px - 2.6rem)'
       setTimeout(() => {
         state.worksVisible = !state.worksVisible
         console.log('延迟关闭常用语面板')
@@ -130,9 +190,10 @@ const worksClick = () => {
     } else {
       // 如果未展开，立即打开并设置高度
       state.worksVisible = !state.worksVisible
-      inputArea.value.style.maxHeight = '300px'
+      inputArea.value.style.maxHeight = '290px'
+      messageList.value.style.height = 'calc(100vh - 320px)'
       state.emojiVisible = false // 确保 emoji 面板关闭
-      console.log('立即打开常用语面板')
+      scrollToBottom()
     }
   } else {
     console.warn('inputArea.value is null')
@@ -143,9 +204,10 @@ const emojiClick = () => {
   console.log('emojiClick')
   // 这里增加一个判断，判断快捷短语弹框是否开启
   if (state.worksVisible) {
-    if (inputArea.value) {
+    if (inputArea.value && messageList.value) {
       // 使 300px - 210px 这一段高度变化附带过渡效果
       inputArea.value.style.maxHeight = '210px'
+      messageList.value.style.height = 'calc(100vh - 200px - 2.6rem)'
       setTimeout(() => {
         state.worksVisible = !state.worksVisible
         console.log('延迟关闭常用语面板')
@@ -153,17 +215,21 @@ const emojiClick = () => {
       state.emojiVisible = !state.emojiVisible
     }
   } else {
-    if (inputArea.value) {
+    if (inputArea.value && messageList.value) {
       if (state.emojiVisible) {
         // 如果已经展开，设置高度收起并延迟关闭
         inputArea.value.style.maxHeight = '2.6rem'
+        messageList.value.style.height = 'calc(100vh - 46px - 2.6rem)'
         setTimeout(() => {
           state.emojiVisible = !state.emojiVisible
           console.log('延迟关闭常用语面板')
         }, 300) // 延迟 300 毫秒
       } else {
         inputArea.value.style.maxHeight = '210px'
+        messageList.value.style.height = 'calc(100vh - 200px - 2.6rem)'
+        scrollToBottom()
         state.emojiVisible = !state.emojiVisible
+        console.log('触发了吗？')
       }
     }
   }
@@ -187,7 +253,7 @@ provide('popup', {
 
 <template>
   <van-nav-bar :title="state.task_name" left-arrow @click-left="leftBack" />
-  <div class="talk-page">
+  <div ref="messageList" class="talk-page">
     <dl>
       <dt
         v-for="(item, index) in state.list"
@@ -209,7 +275,7 @@ provide('popup', {
       <input v-model="state.value" type="text" />
       <!-- 可以用 i 标签选择器找到它 -->
       <van-icon name="smile-o" @click="emojiClick" />
-      <span>发送</span>
+      <span @click="sentMessage">发送</span>
     </div>
     <TalkWords v-show="state.worksVisible"></TalkWords>
     <TalkEmoji v-show="state.emojiVisible"></TalkEmoji>
@@ -221,8 +287,9 @@ provide('popup', {
   width: 100%;
   background: #f3f3f3;
   // 需要减去顶部 bar 的高度和ui稿件中底部组件的高度
-  height: calc(100vh - 46px - 2.6rem);
+  height: calc(100vh - 40px - 2.6rem);
   overflow: auto;
+  // transition: height 0.1s ease;
 }
 
 dl {
