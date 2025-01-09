@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 
 // 城市列表接口
-export function cityList() {
+export function cityList<T>(): Promise<T> {
   return request({
     url: '/sys/city/list',
     method: 'get'

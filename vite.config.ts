@@ -32,10 +32,11 @@ export default defineConfig({
     }
   },
   server: {
+    host: '0.0.0.0',
     port: 5173,
     open: true,
     proxy: {
-      '/api': 'http://api.imooc.zcwytd.com'
+      '/api': 'http://127.0.0.1:3007'
     },
     cors: true // 在开发阶段不需要手动设置服务器端的 CORS 头信息即可进行跨域请求，节省时间。
   },

@@ -2,7 +2,6 @@
 import { inject, reactive } from 'vue'
 import { screenList } from '@/api/task'
 import { taskStore } from '@/stores/task'
-import { showToast } from 'vant'
 
 interface PopupContext {
   closeTaskScreen: (obj?) => void
@@ -44,9 +43,9 @@ const getScreenList = async () => {
   if (res.data) {
     // console.log(res)
     store.setScreenList(res.data)
-    showToast(res.msg)
+    // showToast(res.msg)
   } else {
-    showToast(res.msg)
+    // showToast(res.msg)
   }
 }
 if (!store.screenList.serviceMode) getScreenList()

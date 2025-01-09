@@ -6,7 +6,7 @@ interface CodeResponse {
   code: string // 确保这个结构与 API 返回的数据匹配
 }
 
-export function getCode(data: { accounts: string }): Promise<CodeResponse> {
+export function getCode(data): Promise<CodeResponse> {
   return request({
     url: '/login/code',
     method: 'post',
@@ -46,14 +46,14 @@ export function login(data: LoginData): Promise<LoginResponse> {
 }
 
 interface PolicyResponse {
-  records: { content: string }[]
+  content: string
 }
 
 // 协议文件接口
-export function getPolicy(data: { id: number }): Promise<PolicyResponse> {
+export function getPolicy(params: { id: number }): Promise<PolicyResponse> {
   return request({
     url: '/policy_protocol/list',
     method: 'get',
-    params: data
+    params
   })
 }

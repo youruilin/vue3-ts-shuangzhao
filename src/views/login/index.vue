@@ -69,7 +69,7 @@ const loginSubmit = async () => {
       router.push('/talent')
     }
   } else {
-    showToast(res.msg)
+    showToast('验证失败')
   }
 }
 
@@ -168,7 +168,7 @@ const onClickLeft = () => history.back()
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 22.5rem;
+    bottom: 1.5rem;
     left: 0;
     width: 100%;
   }

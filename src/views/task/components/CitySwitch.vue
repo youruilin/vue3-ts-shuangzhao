@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { inject } from 'vue'
-import { cityList } from '@/api/task'
+// import { cityList } from '@/api/task'
 import { taskStore } from '@/stores/task'
-import { Toast } from 'vant'
+// import { Toast } from 'vant'
 
 interface PopupContext {
   closeCitySwitch: (cityName?: string) => void
@@ -22,16 +22,16 @@ const store = taskStore()
 
 const leftBack = () => closeCitySwitch()
 
-const getCityList = async () => {
-  const res = await cityList()
-  if (res) {
-    // console.log(res)
-    store.setCityList(res)
-  } else {
-    new Toast('到这里出错了')
-  }
-}
-if (store.cityList.length <= 0) getCityList()
+// const getCityList = async () => {
+//   const res = await cityList()
+//   if (res) {
+//     // console.log(res)
+//     store.setCityList(res)
+//   } else {
+//     new Toast('到这里出错了')
+//   }
+// }
+if (store.cityList.length <= 0) store.getCityList()
 </script>
 
 <template>

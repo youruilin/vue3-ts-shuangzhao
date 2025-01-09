@@ -3,7 +3,6 @@ import { reactive } from 'vue'
 import { contractList } from '@/api/contract'
 import ContractList from '@/components/list/ContractList.vue'
 import { contractStore } from '@/stores/conract'
-import { showToast } from 'vant'
 
 const store = contractStore()
 const tabs = [
@@ -29,7 +28,92 @@ const tabs = [
 
 const state = reactive({
   type: store.type || tabs[0].type,
-  list: [],
+  list: [
+    {
+      contract_id: 80,
+
+      contract_name: '一步招聘App项目开发',
+
+      contract_type: '技术服务',
+
+      phone: '',
+
+      task_salary: 100000,
+
+      start_cycle_time: '2022-10-25',
+
+      end_cycle_time: '2022-12-05',
+
+      settle_salary: 0,
+
+      signing_time: null,
+
+      is_contract_type: 2,
+
+      user_id: 25,
+
+      check_out: '按任务结算',
+
+      task_ask: '1个半月周期开发android和ios端一步招聘app',
+
+      create_time: '2022-10-22T03:38:43.000Z',
+
+      create_user_id: 53,
+
+      user_name: '秦升成',
+
+      accounts: '13321178501',
+
+      sex: 1,
+
+      duties: null,
+
+      work_time: '2010-5',
+
+      birthday: '1990-05',
+
+      it_head:
+        'http://api.share.zcwytd.com/upload/images/6635d99062f811ed90aab73514f19278/108-108.png',
+
+      highest_education: '大专',
+
+      inside_type: '优秀',
+
+      company_name: '北京驻场无忧科技有限公司',
+
+      logo: 'http://api.share.zcwytd.com/upload/images/6635d99062f811ed90aab73514f19278/108-108.png',
+
+      contract_I_state: -1,
+
+      contract_I_stage: null,
+
+      contract_II_state: -1,
+
+      contract_II_stage: null,
+
+      contract_III_stage: null,
+
+      contract_III_state: -1,
+
+      contract_IIII_state: -1,
+
+      contract_IIII_stage: null,
+
+      update_I_time: null,
+
+      update_II_time: null,
+
+      update_III_time: null,
+
+      update_IIII_time: null,
+
+      work_year: '12年',
+
+      age: '32岁',
+
+      is_contract_type_text: '待确认'
+    }
+  ],
   loading: false,
   activeIndex: 0
 })
@@ -53,7 +137,7 @@ const getContractList = async () => {
   if (res.records) {
     state.list = res.records
   } else {
-    showToast(res.msg)
+    state.list = res.records
   }
   state.loading = false
   state.activeIndex++

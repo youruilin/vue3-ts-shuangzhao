@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { getPolicy } from '@/api/user'
-import { Toast } from 'vant'
+import { showToast } from 'vant'
 
 const state = ref({
   htmlText: ''
@@ -10,12 +10,12 @@ const state = ref({
 const onClickLeft = () => history.back()
 const getPolicyChange = async () => {
   const res = await getPolicy({
-    id: 16
+    id: 1
   })
   if (res) {
-    state.value.htmlText = res.records[0].content
+    state.value.htmlText = res.content
   } else {
-    new Toast('这里出错啦')
+    showToast('这里出错啦')
   }
 }
 
@@ -24,7 +24,7 @@ getPolicyChange()
 
 <template>
   <van-nav-bar title="隐私政策" left-text="" left-arrow @click-left="onClickLeft" />
-  <div class="text-agree" v-html="state.htmlText"></div>
+  <div class="text-agree" v-html="state.htmlText.replace(/\n/g, '<br>')"></div>
 </template>
 <style scoped>
 .text-agree {

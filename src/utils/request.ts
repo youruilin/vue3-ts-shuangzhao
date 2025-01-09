@@ -30,7 +30,7 @@ service.interceptors.response.use(
       if (res.code == 200) {
         return res.result || res.data
       } else {
-        showToast('出错啦!')
+        showToast(res.message)
       }
     }
   },

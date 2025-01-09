@@ -48,6 +48,7 @@ onUnmounted(() => {
         !$route.path.startsWith('/task/TaskDetails') &&
         !$route.path.startsWith('/contract/ContractDetails') &&
         !$route.path.startsWith('/contract/ContractProgress') &&
+        !$route.path.startsWith('/my/user') &&
         !$route.path.startsWith('/message/MessageTalk')
       "
     />

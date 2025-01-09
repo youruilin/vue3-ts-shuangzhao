@@ -37,6 +37,7 @@ export default tseslint.config(
       // 必须严格按照这种数组包裹字符串的形式来定义规则, 否则会与其他规则发生未知的、随机的、难以排查的错误
       '@stylistic/arrow-parens': ['error', 'as-needed'],
       '@stylistic/operator-linebreak': ['error', 'after'], // 最佳实践就是放在行尾
+      // '@typescript-eslint/no-explicit-any': 'off',
       'prettier/prettier': [
         'warn',
         {

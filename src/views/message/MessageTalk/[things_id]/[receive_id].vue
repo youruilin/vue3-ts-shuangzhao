@@ -19,28 +19,6 @@ const { things_id: taskId, receive_id: receiveId } = defineProps<{
   receive_id
 }>()
 
-const sentMessage = async () => {
-  state.loading = true
-  const res = await chatMessageContentAdd<{ msg }>({
-    receive_id: receiveId,
-    things_id: taskId,
-    content: state.value,
-    things_type: 0
-  })
-  if (res) {
-    getChatMessageContent()
-    state.value = ''
-    // if (inputArea.value) {
-    //   inputArea.value.style.maxHeight = '2.6rem'
-    //   setTimeout(() => {
-    //     state.worksVisible = false
-    //     state.emojiVisible = false
-    //   }, 300)
-    // }
-  }
-  showToast(res.msg)
-}
-
 // 在标签中，对数据进行循环遍历时，需要用到具体的数据，需要再这里声明
 interface chatMessageContentResponseItem {
   create_time: string
@@ -75,16 +53,28 @@ const messageList = ref<HTMLDivElement | null>(null)
 
 const isFirstLoad = ref(true) // 标记首次加载
 
-const scrollToBottom = () => {
+const scrollToBottom = (delay: number = 0) => {
   if (messageList.value) {
-    messageList.value.scrollTop = messageList.value.scrollHeight
-    console.log('确保执行了滚动')
+    // 确保 messageList.value 不为 null 或 undefined
+    if (delay > 0) {
+      setTimeout(() => {
+        if (messageList.value) {
+          // 再次确认 messageList.value 存在
+          messageList.value.scrollTop = messageList.value.scrollHeight
+          console.log('延迟执行滚动')
+        }
+      }, delay)
+    } else {
+      messageList.value.scrollTop = messageList.value.scrollHeight
+      console.log('确保执行了滚动')
+    }
   }
 }
 
 watch(
   () => state.list,
   () => {
+    scrollToBottom()
     // 仅在首次加载时滚动
     if (isFirstLoad.value) {
       nextTick(() => {
@@ -174,63 +164,76 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
 })
 
+const adjustTalkPageHeight = (inputHeight: string) => {
+  if (inputArea.value && messageList.value) {
+    inputArea.value.style.maxHeight = inputHeight
+    messageList.value.style.height = `calc(100vh - 40px - ${inputHeight})`
+  } else {
+    console.warn('inputArea.value 或 messageList.value 为 null')
+  }
+}
+
 const worksClick = () => {
   console.log('点击了常用语')
-  // 确定此时 dom 已加载
-  if (inputArea.value && messageList.value) {
-    // 添加空值检查，确保 inputArea.value 不为 null
-    if (state.worksVisible) {
-      // 如果已经展开，设置高度收起并延迟关闭
-      inputArea.value.style.maxHeight = '2.6rem'
-      messageList.value.style.height = 'calc(100vh - 40px - 2.6rem)'
-      setTimeout(() => {
-        state.worksVisible = !state.worksVisible
-        console.log('延迟关闭常用语面板')
-      }, 300) // 延迟 300 毫秒
-    } else {
-      // 如果未展开，立即打开并设置高度
-      state.worksVisible = !state.worksVisible
-      inputArea.value.style.maxHeight = '290px'
-      messageList.value.style.height = 'calc(100vh - 320px)'
-      state.emojiVisible = false // 确保 emoji 面板关闭
-      scrollToBottom()
-    }
+
+  // 确保 DOM 元素已加载
+  if (!inputArea.value || !messageList.value) {
+    console.warn('inputArea.value 或 messageList.value 为 null')
+    return
+  }
+
+  // 更新状态和样式
+  if (state.worksVisible) {
+    adjustTalkPageHeight('2.6rem')
+    setTimeout(() => {
+      state.worksVisible = false
+      console.log('延迟关闭常用语面板')
+    }, 300)
   } else {
-    console.warn('inputArea.value is null')
+    // 如果常用语面板未开启，展开面板
+    adjustTalkPageHeight('290px')
+    scrollToBottom(150)
+
+    state.worksVisible = true
+    state.emojiVisible = false // 确保 emoji 面板关闭
+    console.log('打开常用语面板')
   }
 }
 
 const emojiClick = () => {
   console.log('emojiClick')
-  // 这里增加一个判断，判断快捷短语弹框是否开启
+
+  // 确保 DOM 元素已加载
+  if (!inputArea.value || !messageList.value) {
+    console.warn('inputArea.value 或 messageList.value 为 null')
+    return
+  }
+
   if (state.worksVisible) {
-    if (inputArea.value && messageList.value) {
-      // 使 300px - 210px 这一段高度变化附带过渡效果
-      inputArea.value.style.maxHeight = '210px'
-      messageList.value.style.height = 'calc(100vh - 200px - 2.6rem)'
-      setTimeout(() => {
-        state.worksVisible = !state.worksVisible
-        console.log('延迟关闭常用语面板')
-      }, 200) // 延迟 300 毫秒
-      state.emojiVisible = !state.emojiVisible
-    }
+    // 如果常用语面板开启，调整为 emoji 面板高度
+    adjustTalkPageHeight('210px')
+
+    setTimeout(() => {
+      state.worksVisible = false // 关闭常用语面板
+      state.emojiVisible = !state.emojiVisible // 切换 emoji 面板状态
+      console.log('延迟关闭常用语面板并切换 emoji 状态')
+    }, 200)
   } else {
-    if (inputArea.value && messageList.value) {
-      if (state.emojiVisible) {
-        // 如果已经展开，设置高度收起并延迟关闭
-        inputArea.value.style.maxHeight = '2.6rem'
-        messageList.value.style.height = 'calc(100vh - 46px - 2.6rem)'
-        setTimeout(() => {
-          state.emojiVisible = !state.emojiVisible
-          console.log('延迟关闭常用语面板')
-        }, 300) // 延迟 300 毫秒
-      } else {
-        inputArea.value.style.maxHeight = '210px'
-        messageList.value.style.height = 'calc(100vh - 200px - 2.6rem)'
-        scrollToBottom()
-        state.emojiVisible = !state.emojiVisible
-        console.log('触发了吗？')
-      }
+    if (state.emojiVisible) {
+      // 如果 emoji 面板已开启，收起面板
+      adjustTalkPageHeight('2.6rem')
+
+      setTimeout(() => {
+        state.emojiVisible = false
+        console.log('延迟关闭 emoji 面板')
+      }, 300)
+    } else {
+      // 如果 emoji 面板未开启，展开面板
+      adjustTalkPageHeight('210px')
+      scrollToBottom(200)
+
+      state.emojiVisible = true
+      console.log('打开 emoji 面板')
     }
   }
 }
@@ -243,6 +246,23 @@ const wordsChange = (value: string) => {
 const emojiChange = value => {
   state.value = state.value + value
   // state.emojiVisible = false
+}
+
+const sentMessage = async () => {
+  state.loading = true
+  const res = await chatMessageContentAdd<{ msg }>({
+    receive_id: receiveId,
+    things_id: taskId,
+    content: state.value,
+    things_type: 0
+  })
+  if (res) {
+    await getChatMessageContent()
+    state.value = ''
+    scrollToBottom()
+  }
+
+  showToast(res.msg)
 }
 
 provide('popup', {
@@ -289,7 +309,7 @@ provide('popup', {
   // 需要减去顶部 bar 的高度和ui稿件中底部组件的高度
   height: calc(100vh - 40px - 2.6rem);
   overflow: auto;
-  // transition: height 0.1s ease;
+  transition: height 200ms ease;
 }
 
 dl {
