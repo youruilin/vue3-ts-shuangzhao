@@ -224,40 +224,13 @@ const list = [
   }
 ]
 
-const bannerlist = [
-  {
-    id: 15,
-    picture:
-      'http://test.api.share.eduwys.com:10011/upload/images/headImg/JMV7A3UbA1vQjXjSyRLVmbKW.png',
-    name: 'it求职端2',
-    isdelete: 0,
-    sort: 50,
-    type: 2,
-    url: '',
-    create_time: '2022-06-28T13:03:53.000Z',
-    update_time: '2022-07-05T08:48:55.000Z'
-  },
-  {
-    id: 16,
-    picture:
-      'http://test.api.share.eduwys.com:10011/upload/images/headImg/DUo5BxkoFyxbCi5ycrd2pOH8.png',
-    name: 'it求职端1',
-    isdelete: 0,
-    sort: 50,
-    type: 2,
-    url: 'https://mobile.zcwytd.com/#/pages/login/choice/index',
-    create_time: '2022-06-28T13:05:33.000Z',
-    update_time: '2022-07-01T06:34:11.000Z'
-  }
-]
-
 export const taskStore = defineStore({
   id: 'task',
   state: () => {
     return {
-      cityValue: localStorage.getItem('city') || '北京',
+      cityValue: localStorage.getItem('city') || '東京', // 从 localStorage 获取初始值
       cityList: [] as City[], // 使用 City 数组类型
-      bannerList: bannerlist as getBanner[],
+      bannerList: [] as getBanner[],
       positionValue: '', // 从 localStorage 获取初始值
       positionList: list as getPosition[],
       screenList: {} as getScreen,
@@ -341,7 +314,7 @@ export const taskStore = defineStore({
       this.positionValue = p
       localStorage.setItem('positionValue', p)
     },
-    setScreenList(data: getScreen) {
+    setScreenList(data) {
       this.screenList = data
     },
     setHotSearchList(data) {

@@ -2,12 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import generatedRoutes from 'virtual:generated-pages'
 import { userStore } from '@/stores/user'
 const routes = [
-  ...generatedRoutes
-  // {
-  //   path: '/:pathMatch(.*)*',
-  //   name: 'not-found',
-  //   component: () => import('@/views/404.vue')
-  // }
+  ...generatedRoutes,
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('@/views/404.vue')
+  }
 ]
 const router = createRouter({
   history: createWebHistory(),

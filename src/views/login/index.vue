@@ -111,7 +111,6 @@ const onClickLeft = () => history.back()
 
 <style lang="scss" scoped>
 .login-main {
-  background: #fff;
   height: 100vh;
 }
 .icon-left {

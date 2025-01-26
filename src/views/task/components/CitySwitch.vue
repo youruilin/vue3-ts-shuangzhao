@@ -39,7 +39,7 @@ if (store.cityList.length <= 0) store.getCityList()
   <div class="city-switch">
     <h3>選択した</h3>
     <div class="city-switch-text">
-      <span>{{ store.cityValue }}</span>
+      <span @click="closeCitySwitch()">{{ store.cityValue }}</span>
     </div>
     <h3>シティスイッチ</h3>
     <div class="city-switch-text">

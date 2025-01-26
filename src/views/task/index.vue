@@ -9,7 +9,7 @@ import TaskScreen from './components/TaskScreen.vue'
 import { taskStore } from '@/stores/task'
 
 import { taskAllList } from '@/api/task'
-import { showToast } from 'vant'
+// import { showToast } from 'vant'
 
 const store = taskStore()
 
@@ -40,7 +40,11 @@ const getTaskAllList = async () => {
     pageSize: state.pageSize,
     city: store.cityValue
   })
-  if (res.records) {
+  console.log(res.total)
+
+  // 判断条件必须加上 .length, 否则前端会一直加载数据
+  // 因为，如果不加上 .length, 则当 res.records 为 undefined 时, 会一直加载数据
+  if (res.records.length) {
     state.taskList = state.taskList.concat(res.records)
     // 加载状态结束
     state.loading = false
@@ -51,7 +55,9 @@ const getTaskAllList = async () => {
       state.finished = false
     }
   } else {
-    showToast(res.msg)
+    // 综合用户体验，不给任何提示比较好
+    // showToast(res.msg)
+    state.finished = true
     state.loading = false
   }
 }
@@ -96,9 +102,11 @@ provide('popup', {
 
 // List 会监听浏览器的滚动事件并计算列表的位置 - @load="onLoad"
 // 当列表底部与可视区域的距离小于 offset 时，List 会触发一次 load 事件
+// offset 默认值为 300
 // 经过实测, onLoad 函数在页面加载时会首先自动执行一次
 const onLoad = () => {
-  state.pageNum = state.pageNum + 1 // 正因为 onLoad 的自动执行, 导致首次调用 getTaskAllList() 函数前, 给 pageNum 赋值为 1 , 因此只返回 pageSize 中规定的数据量
+  // 正因为 onLoad 的自动执行, 导致首次调用 getTaskAllList() 函数前, 给 pageNum 赋值为 1 , 传递给后端
+  state.pageNum = state.pageNum + 1
   getTaskAllList()
   console.log('onLoad触底执行了一次')
 }
@@ -158,8 +166,8 @@ const goSearch = () => {
     <!-- 切换城市弹框 -->
     <van-popup
       v-model:show="state.positionSwitch"
-      duration="0"
-      position="top"
+      duration="0.3"
+      position="right"
       :style="{ width: '100%', height: '100%' }"
     >
       <PositionType></PositionType>
@@ -168,8 +176,8 @@ const goSearch = () => {
     <!-- 筛选条件弹框 -->
     <van-popup
       v-model:show="state.screenSwitch"
-      duration="0"
-      position="top"
+      duration="0.3"
+      position="right"
       :style="{ width: '100%', height: '100%' }"
     >
       <TaskScreen></TaskScreen>

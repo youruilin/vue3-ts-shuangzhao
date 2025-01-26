@@ -8,7 +8,7 @@ const { item } = defineProps<{
 
 <template>
   <div class="company-source">
-    <img :src="item.logo" alt="" />
+    <img :src="item.head_img" alt="" />
     <div>
       <h5>{{ item.company_name }}</h5>
       <p>{{ item.city }} · {{ item.area }}</p>

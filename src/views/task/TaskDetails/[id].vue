@@ -15,7 +15,8 @@ const { id: taskId } = defineProps<{
   id: string
 }>()
 
-// const { id: taskId }：这部分代码是 JavaScript 的解构赋值语法。它将 props 中的 id 属性重命名为 taskId，这样你在组件内部就可以使用 taskId 来引用该值。
+// const { id: taskId }：这部分代码是 JavaScript 的解构赋值语法
+// 它将 props 中的 id 属性重命名为 taskId，这样你在组件内部就可以使用 taskId 来引用该值。
 
 interface DetailItem {
   task_name

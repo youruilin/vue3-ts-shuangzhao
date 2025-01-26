@@ -63,7 +63,7 @@ const getTaskAllList = async () => {
     pageNum: state.pageNum,
     pageSize: state.pageSize
   })
-  if (res.records) {
+  if (res.records.length) {
     state.taskList = state.taskList.concat(res.records)
     state.loading = false
     if (state.taskList.length >= res.total) {
@@ -72,7 +72,8 @@ const getTaskAllList = async () => {
       state.finished = false
     }
   } else {
-    showToast(res.msg)
+    // showToast(res.msg)
+    state.finished = true
     state.loading = false
   }
 }
@@ -98,7 +99,7 @@ const onRefresh = () => {
       <van-search
         v-model="state.value"
         show-action
-        placeholder="请输入搜索关键词"
+        placeholder="検索したい内容を入力してください"
         @search="onSearch"
         @cancel="onCancel"
       />

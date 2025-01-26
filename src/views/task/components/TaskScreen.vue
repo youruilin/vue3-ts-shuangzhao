@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { showToast } from 'vant'
 import { inject, reactive } from 'vue'
-import { screenList } from '@/api/task'
+// import { screenList } from '@/api/task'
 import { taskStore } from '@/stores/task'
 
 interface PopupContext {
@@ -39,11 +40,19 @@ const clearScreen = () => {
 }
 
 const getScreenList = async () => {
-  const res = await screenList()
+  const response = await fetch('/data/screenlist.json')
+  interface ScreenListResponse {
+    data: {
+      serviceMode: string[]
+      taskCycle: string[]
+    }
+    msg: string
+  }
+  const res = (await response.json()) as ScreenListResponse
   if (res.data) {
     // console.log(res)
     store.setScreenList(res.data)
-    // showToast(res.msg)
+    showToast(res.msg)
   } else {
     // showToast(res.msg)
   }

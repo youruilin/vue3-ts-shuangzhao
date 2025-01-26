@@ -1,0 +1,44 @@
+{
+  "list":[
+    {
+      "id": 15, 
+  
+      "picture": "/data/img/banner-1.png", 
+      
+      "name": "it求职端2", 
+      
+      "isdelete": 0, 
+      
+      "sort": 50, 
+      
+      "type": 2, 
+      
+      "url": "https://mobile.zcwytd.com/#/pages/login/choice/index", 
+      
+      "create_time": "2022-06-28T13:03:53.000Z", 
+      
+      "update_time": "2022-07-05T08:48:55.000Z" 
+     
+    },
+    {
+      "id": 16, 
+      
+      "picture": "/data/img/banner-2.png", 
+      
+      "name": "it求职端1", 
+      
+      "isdelete": 0, 
+      
+      "sort": 50, 
+      
+      "type": 2, 
+      
+      "url": "https://mobile.zcwytd.com/#/pages/login/choice/index", 
+      
+      "create_time": "2022-06-28T13:05:33.000Z", 
+      
+      "update_time": "2022-07-01T06:34:11.000Z" 
+     
+    }
+  ]
+}

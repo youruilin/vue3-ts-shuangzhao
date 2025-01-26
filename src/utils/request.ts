@@ -10,9 +10,6 @@ service.interceptors.request.use(
   config => {
     const token = window.localStorage.getItem('token')
     if (token) {
-      // config.headers = {
-      //   'x-access-token': token
-      // }
       // 直接在 headers 对象上添加属性
       config.headers['x-access-token'] = token
     }
@@ -38,4 +35,6 @@ service.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+
+// 导出后在 api 文件中引入
 export default service
