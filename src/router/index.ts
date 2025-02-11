@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import generatedRoutes from 'virtual:generated-pages'
 import { userStore } from '@/stores/user'
+
+const basePath = import.meta.env.MODE === 'production' ? '/vue3-ts-shuangzhao/' : '/'
+
 const routes = [
   ...generatedRoutes,
   {
@@ -10,7 +13,7 @@ const routes = [
   }
 ]
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(basePath),
   routes
 })
 
