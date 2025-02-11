@@ -32,9 +32,9 @@ router.beforeEach((to, from, next) => {
     }
   } else {
     if (
-      to.path === basePath + '/login' ||
-      to.path === basePath + '/login/ServiceAgree' ||
-      to.path === basePath + '/login/PrivatePolicy'
+      to.path === '/login' ||
+      to.path === '/login/ServiceAgree' ||
+      to.path === '/login/PrivatePolicy'
     ) {
       console.log(basePath)
       next()
