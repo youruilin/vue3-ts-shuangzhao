@@ -1,0 +1,1 @@
+import{_ as e,r as t,L as o,c as n,o as s,a9 as r}from"./index-vMkLp5bL.js";const c={__name:"CoinExplain",setup(l){const a=t("");return o(()=>{a.value=import.meta.url}),(_,p)=>(s(),n("div",null,r(a.value),1))}},u=e(c,[["__scopeId","data-v-c9e4527e"]]);export{u as default};
