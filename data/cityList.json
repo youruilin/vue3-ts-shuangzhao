@@ -1,0 +1,2004 @@
+[
+  {
+    "id": "9a0b7b90af2411ec885c5ba069ef4761",
+    "key": "9a0b7b90af2411ec885c5ba069ef4761",
+    "name": "東京",
+    "pid": "",
+    "sort": 0
+  },
+  {
+    "id": "9a0b7b90af2411ec885c5ba069ef4761",
+    "key": "9a0b7b90af2411ec885c5ba069ef4761",
+    "name": "北京",
+    "pid": "",
+    "sort": 0,
+    "children": [
+      {
+        "id": "d0649a10dedf11ec8fa493ce3b5cb5e9",
+        "key": "d0649a10dedf11ec8fa493ce3b5cb5e9",
+        "name": "密云区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 1
+      },
+      {
+        "id": "caa8dbe0dedf11ec8fa493ce3b5cb5e9",
+        "key": "caa8dbe0dedf11ec8fa493ce3b5cb5e9",
+        "name": "延庆区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 2
+      },
+      {
+        "id": "c364d000dedf11ec8fa493ce3b5cb5e9",
+        "key": "c364d000dedf11ec8fa493ce3b5cb5e9",
+        "name": "平谷区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 3
+      },
+      {
+        "id": "bc930df0dedf11ec8fa493ce3b5cb5e9",
+        "key": "bc930df0dedf11ec8fa493ce3b5cb5e9",
+        "name": "怀柔区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 4
+      },
+      {
+        "id": "0d84d220dc9c11ec81faeba05688eaba",
+        "key": "0d84d220dc9c11ec81faeba05688eaba",
+        "name": "门头沟区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 5
+      },
+      {
+        "id": "fd97da90dc9811ecafbb4d7ad4be2d2c",
+        "key": "fd97da90dc9811ecafbb4d7ad4be2d2c",
+        "name": "石景山区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 6
+      },
+      {
+        "id": "f8b90780dc9b11ec81faeba05688eaba",
+        "key": "f8b90780dc9b11ec81faeba05688eaba",
+        "name": "房山区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 7
+      },
+      {
+        "id": "c4bbbb60dc9811ecae93736ed68f50af",
+        "key": "c4bbbb60dc9811ecae93736ed68f50af",
+        "name": "昌平区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 8
+      },
+      {
+        "id": "b8bc9110dc9b11ec81faeba05688eaba",
+        "key": "b8bc9110dc9b11ec81faeba05688eaba",
+        "name": "丰台区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 9
+      },
+      {
+        "id": "c742f4b0e23911ec84cd098be1ee1905",
+        "key": "c742f4b0e23911ec84cd098be1ee1905",
+        "name": "经开区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 10
+      },
+      {
+        "id": "870e5db0dc9b11ec81faeba05688eaba",
+        "key": "870e5db0dc9b11ec81faeba05688eaba",
+        "name": "大兴区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 11
+      },
+      {
+        "id": "66002b20dcd311ec81faeba05688eaba",
+        "key": "66002b20dcd311ec81faeba05688eaba",
+        "name": "通州区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 12
+      },
+      {
+        "id": "786aceb0dc9b11ec81faeba05688eaba",
+        "key": "786aceb0dc9b11ec81faeba05688eaba",
+        "name": "顺义区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 13
+      },
+      {
+        "id": "b3dae1a0dc0b11eca8ec75e19c35b67e",
+        "key": "b3dae1a0dc0b11eca8ec75e19c35b67e",
+        "name": "西城区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 14
+      },
+      {
+        "id": "a655aa00dc0211eca10f85a02a9d0829",
+        "key": "a655aa00dc0211eca10f85a02a9d0829",
+        "name": "东城区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 15
+      },
+      {
+        "id": "f80f1140b0bc11ecaeec0ba6f60f13b8",
+        "key": "f80f1140b0bc11ecaeec0ba6f60f13b8",
+        "name": "海淀区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 16
+      },
+      {
+        "id": "9fcf7720af2411ec885c5ba069ef4761",
+        "key": "9fcf7720af2411ec885c5ba069ef4761",
+        "name": "朝阳区",
+        "pid": "9a0b7b90af2411ec885c5ba069ef4761",
+        "sort": 17
+      }
+    ]
+  },
+  {
+    "id": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+    "key": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+    "name": "武汉",
+    "pid": "",
+    "sort": 0,
+    "children": [
+      {
+        "id": "c3904470b7dd11ecac2b5d008f82fa5c",
+        "key": "c3904470b7dd11ecac2b5d008f82fa5c",
+        "name": "江岸区",
+        "pid": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+        "sort": 0
+      },
+      {
+        "id": "50c528f0f29511ec900acd0f9af46940",
+        "key": "50c528f0f29511ec900acd0f9af46940",
+        "name": "汉南区",
+        "pid": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+        "sort": 1
+      },
+      {
+        "id": "8f2ef960ff3611ec86240f73f8f20435",
+        "key": "8f2ef960ff3611ec86240f73f8f20435",
+        "name": "洪山区",
+        "pid": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+        "sort": 50
+      },
+      {
+        "id": "9b54de30ff3611ec86240f73f8f20435",
+        "key": "9b54de30ff3611ec86240f73f8f20435",
+        "name": "硚口区",
+        "pid": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+        "sort": 50
+      },
+      {
+        "id": "c1c2f8e0ff3611ec86240f73f8f20435",
+        "key": "c1c2f8e0ff3611ec86240f73f8f20435",
+        "name": "新洲区",
+        "pid": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+        "sort": 50
+      },
+      {
+        "id": "ca3ac9d0ff3611ec86240f73f8f20435",
+        "key": "ca3ac9d0ff3611ec86240f73f8f20435",
+        "name": "蔡甸区",
+        "pid": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+        "sort": 50
+      },
+      {
+        "id": "d194a7a0ff3611ec86240f73f8f20435",
+        "key": "d194a7a0ff3611ec86240f73f8f20435",
+        "name": "黄陂区",
+        "pid": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+        "sort": 50
+      },
+      {
+        "id": "dc662000ff3611ec86240f73f8f20435",
+        "key": "dc662000ff3611ec86240f73f8f20435",
+        "name": "武昌区",
+        "pid": "bb1b59b0b7dd11ecac2b5d008f82fa5c",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "dfcfeba0f2c411ecb575e5b3bc4fd4e5",
+    "key": "dfcfeba0f2c411ecb575e5b3bc4fd4e5",
+    "name": "长沙",
+    "pid": "",
+    "sort": 2,
+    "children": [
+      {
+        "id": "073fab20ff3711ec86240f73f8f20435",
+        "key": "073fab20ff3711ec86240f73f8f20435",
+        "name": "天心区",
+        "pid": "dfcfeba0f2c411ecb575e5b3bc4fd4e5",
+        "sort": 50
+      },
+      {
+        "id": "0ea066c0ff3711ec86240f73f8f20435",
+        "key": "0ea066c0ff3711ec86240f73f8f20435",
+        "name": "望城区",
+        "pid": "dfcfeba0f2c411ecb575e5b3bc4fd4e5",
+        "sort": 50
+      },
+      {
+        "id": "2c218cd0f38c11ecb8eae9d50e7721d7",
+        "key": "2c218cd0f38c11ecb8eae9d50e7721d7",
+        "name": "芙蓉区",
+        "pid": "dfcfeba0f2c411ecb575e5b3bc4fd4e5",
+        "sort": 50
+      },
+      {
+        "id": "31165180f38c11ecb8eae9d50e7721d7",
+        "key": "31165180f38c11ecb8eae9d50e7721d7",
+        "name": "雨花区",
+        "pid": "dfcfeba0f2c411ecb575e5b3bc4fd4e5",
+        "sort": 50
+      },
+      {
+        "id": "e6682720f2c411ecb575e5b3bc4fd4e5",
+        "key": "e6682720f2c411ecb575e5b3bc4fd4e5",
+        "name": "岳麓区",
+        "pid": "dfcfeba0f2c411ecb575e5b3bc4fd4e5",
+        "sort": 50
+      },
+      {
+        "id": "fe113460ff3611ec86240f73f8f20435",
+        "key": "fe113460ff3611ec86240f73f8f20435",
+        "name": "开福区",
+        "pid": "dfcfeba0f2c411ecb575e5b3bc4fd4e5",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "003904903bcb11ed8a83cf002322a4d7",
+    "key": "003904903bcb11ed8a83cf002322a4d7",
+    "name": "太原",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "07039ab03bcb11ed8a83cf002322a4d7",
+        "key": "07039ab03bcb11ed8a83cf002322a4d7",
+        "name": "小店区",
+        "pid": "003904903bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "0d37e4403bcb11ed8a83cf002322a4d7",
+        "key": "0d37e4403bcb11ed8a83cf002322a4d7",
+        "name": "迎泽区",
+        "pid": "003904903bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "11b296f03bcb11ed8a83cf002322a4d7",
+        "key": "11b296f03bcb11ed8a83cf002322a4d7",
+        "name": "杏花岭区",
+        "pid": "003904903bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "16955a403bcb11ed8a83cf002322a4d7",
+        "key": "16955a403bcb11ed8a83cf002322a4d7",
+        "name": "尖草坪区",
+        "pid": "003904903bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "1c4950403bcb11ed8a83cf002322a4d7",
+        "key": "1c4950403bcb11ed8a83cf002322a4d7",
+        "name": "万柏林区",
+        "pid": "003904903bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "21b037b03bcb11ed8a83cf002322a4d7",
+        "key": "21b037b03bcb11ed8a83cf002322a4d7",
+        "name": "晋源区",
+        "pid": "003904903bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "01c3c160f38c11ecb8eae9d50e7721d7",
+    "key": "01c3c160f38c11ecb8eae9d50e7721d7",
+    "name": "上海",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "0a828660f38c11ecb8eae9d50e7721d7",
+        "key": "0a828660f38c11ecb8eae9d50e7721d7",
+        "name": "黄浦区",
+        "pid": "01c3c160f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "140c8aa0f38c11ecb8eae9d50e7721d7",
+        "key": "140c8aa0f38c11ecb8eae9d50e7721d7",
+        "name": "长宁区",
+        "pid": "01c3c160f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "1a1735603bc811ed8a83cf002322a4d7",
+    "key": "1a1735603bc811ed8a83cf002322a4d7",
+    "name": "昆明",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "223f5fb03bc811ed8a83cf002322a4d7",
+        "key": "223f5fb03bc811ed8a83cf002322a4d7",
+        "name": "五华区",
+        "pid": "1a1735603bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "2ab02bc03bc811ed8a83cf002322a4d7",
+        "key": "2ab02bc03bc811ed8a83cf002322a4d7",
+        "name": "盘龙区",
+        "pid": "1a1735603bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "30e07db03bc811ed8a83cf002322a4d7",
+        "key": "30e07db03bc811ed8a83cf002322a4d7",
+        "name": "官渡区",
+        "pid": "1a1735603bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "36970bc03bc811ed8a83cf002322a4d7",
+        "key": "36970bc03bc811ed8a83cf002322a4d7",
+        "name": "西山区",
+        "pid": "1a1735603bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "3c1684403bc811ed8a83cf002322a4d7",
+        "key": "3c1684403bc811ed8a83cf002322a4d7",
+        "name": "东川区",
+        "pid": "1a1735603bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "41eecb203bc811ed8a83cf002322a4d7",
+        "key": "41eecb203bc811ed8a83cf002322a4d7",
+        "name": "呈贡区",
+        "pid": "1a1735603bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "46feb8f03bc811ed8a83cf002322a4d7",
+        "key": "46feb8f03bc811ed8a83cf002322a4d7",
+        "name": "晋宁区",
+        "pid": "1a1735603bc811ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "1ab008103bca11ed8a83cf002322a4d7",
+    "key": "1ab008103bca11ed8a83cf002322a4d7",
+    "name": "贵阳",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "243a81803bca11ed8a83cf002322a4d7",
+        "key": "243a81803bca11ed8a83cf002322a4d7",
+        "name": "南明区",
+        "pid": "1ab008103bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "2a7ef7b03bca11ed8a83cf002322a4d7",
+        "key": "2a7ef7b03bca11ed8a83cf002322a4d7",
+        "name": "云岩区",
+        "pid": "1ab008103bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "2efb7f203bca11ed8a83cf002322a4d7",
+        "key": "2efb7f203bca11ed8a83cf002322a4d7",
+        "name": "花溪区",
+        "pid": "1ab008103bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "332441403bca11ed8a83cf002322a4d7",
+        "key": "332441403bca11ed8a83cf002322a4d7",
+        "name": "乌当区",
+        "pid": "1ab008103bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "375bd0703bca11ed8a83cf002322a4d7",
+        "key": "375bd0703bca11ed8a83cf002322a4d7",
+        "name": "白云区",
+        "pid": "1ab008103bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "3e19e3703bca11ed8a83cf002322a4d7",
+        "key": "3e19e3703bca11ed8a83cf002322a4d7",
+        "name": "观山湖区",
+        "pid": "1ab008103bca11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "1ae94930f38c11ecb8eae9d50e7721d7",
+    "key": "1ae94930f38c11ecb8eae9d50e7721d7",
+    "name": "郑州",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "0cd076d0ff3911ec86240f73f8f20435",
+        "key": "0cd076d0ff3911ec86240f73f8f20435",
+        "name": "经开区",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "1ff0d290f38c11ecb8eae9d50e7721d7",
+        "key": "1ff0d290f38c11ecb8eae9d50e7721d7",
+        "name": "金水区",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "2459aaf0f38c11ecb8eae9d50e7721d7",
+        "key": "2459aaf0f38c11ecb8eae9d50e7721d7",
+        "name": "二七区",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "b6dfe260ff3811ec86240f73f8f20435",
+        "key": "b6dfe260ff3811ec86240f73f8f20435",
+        "name": "中原区",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "bdd2c100ff3811ec86240f73f8f20435",
+        "key": "bdd2c100ff3811ec86240f73f8f20435",
+        "name": "上街区",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "c5f87a50ff3811ec86240f73f8f20435",
+        "key": "c5f87a50ff3811ec86240f73f8f20435",
+        "name": "巩义市",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "d62b82f0ff3811ec86240f73f8f20435",
+        "key": "d62b82f0ff3811ec86240f73f8f20435",
+        "name": "惠济区",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "e5d70c10ff3811ec86240f73f8f20435",
+        "key": "e5d70c10ff3811ec86240f73f8f20435",
+        "name": "荥阳市",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "ee47d820ff3811ec86240f73f8f20435",
+        "key": "ee47d820ff3811ec86240f73f8f20435",
+        "name": "新密市",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "f6d09900ff3811ec86240f73f8f20435",
+        "key": "f6d09900ff3811ec86240f73f8f20435",
+        "name": "新密市",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "ff80df10ff3811ec86240f73f8f20435",
+        "key": "ff80df10ff3811ec86240f73f8f20435",
+        "name": "管城回族区",
+        "pid": "1ae94930f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "2247e0a03bc711ed8a83cf002322a4d7",
+    "key": "2247e0a03bc711ed8a83cf002322a4d7",
+    "name": "宁波",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "2ac334003bc711ed8a83cf002322a4d7",
+        "key": "2ac334003bc711ed8a83cf002322a4d7",
+        "name": "海曙区",
+        "pid": "2247e0a03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "3ee7c2203bc711ed8a83cf002322a4d7",
+        "key": "3ee7c2203bc711ed8a83cf002322a4d7",
+        "name": "江北区",
+        "pid": "2247e0a03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "448d87503bc711ed8a83cf002322a4d7",
+        "key": "448d87503bc711ed8a83cf002322a4d7",
+        "name": "北仑区",
+        "pid": "2247e0a03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "4a3c9b503bc711ed8a83cf002322a4d7",
+        "key": "4a3c9b503bc711ed8a83cf002322a4d7",
+        "name": "镇海区",
+        "pid": "2247e0a03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "512fef203bc711ed8a83cf002322a4d7",
+        "key": "512fef203bc711ed8a83cf002322a4d7",
+        "name": "鄞州区",
+        "pid": "2247e0a03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "5605e1303bc711ed8a83cf002322a4d7",
+        "key": "5605e1303bc711ed8a83cf002322a4d7",
+        "name": "奉化区",
+        "pid": "2247e0a03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "25871b303bc911ed8a83cf002322a4d7",
+    "key": "25871b303bc911ed8a83cf002322a4d7",
+    "name": "厦门",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "2e691fa03bc911ed8a83cf002322a4d7",
+        "key": "2e691fa03bc911ed8a83cf002322a4d7",
+        "name": "思明区",
+        "pid": "25871b303bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "346ce3503bc911ed8a83cf002322a4d7",
+        "key": "346ce3503bc911ed8a83cf002322a4d7",
+        "name": "海沧区",
+        "pid": "25871b303bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "38de47303bc911ed8a83cf002322a4d7",
+        "key": "38de47303bc911ed8a83cf002322a4d7",
+        "name": "湖里区",
+        "pid": "25871b303bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "3d27b0b03bc911ed8a83cf002322a4d7",
+        "key": "3d27b0b03bc911ed8a83cf002322a4d7",
+        "name": "集美区",
+        "pid": "25871b303bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "41515d303bc911ed8a83cf002322a4d7",
+        "key": "41515d303bc911ed8a83cf002322a4d7",
+        "name": "同安区",
+        "pid": "25871b303bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "468e4e703bc911ed8a83cf002322a4d7",
+        "key": "468e4e703bc911ed8a83cf002322a4d7",
+        "name": "翔安区",
+        "pid": "25871b303bc911ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "3660d750f38c11ecb8eae9d50e7721d7",
+    "key": "3660d750f38c11ecb8eae9d50e7721d7",
+    "name": "杭州",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "3b48f1d0f38c11ecb8eae9d50e7721d7",
+        "key": "3b48f1d0f38c11ecb8eae9d50e7721d7",
+        "name": "上城区",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "51d3f8a0f38c11ecb8eae9d50e7721d7",
+        "key": "51d3f8a0f38c11ecb8eae9d50e7721d7",
+        "name": "拱墅区",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "7bc03bd0ff3811ec86240f73f8f20435",
+        "key": "7bc03bd0ff3811ec86240f73f8f20435",
+        "name": "下城区",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "82a8e140ff3811ec86240f73f8f20435",
+        "key": "82a8e140ff3811ec86240f73f8f20435",
+        "name": "滨江区",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "89f24450ff3811ec86240f73f8f20435",
+        "key": "89f24450ff3811ec86240f73f8f20435",
+        "name": "桐庐县",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "912698c0ff3811ec86240f73f8f20435",
+        "key": "912698c0ff3811ec86240f73f8f20435",
+        "name": "余杭区",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "9756c3a0ff3811ec86240f73f8f20435",
+        "key": "9756c3a0ff3811ec86240f73f8f20435",
+        "name": "淳安县",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "a0393d40ff3811ec86240f73f8f20435",
+        "key": "a0393d40ff3811ec86240f73f8f20435",
+        "name": "建德市",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "a827e100ff3811ec86240f73f8f20435",
+        "key": "a827e100ff3811ec86240f73f8f20435",
+        "name": "富阳区",
+        "pid": "3660d750f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "469d9b403bca11ed8a83cf002322a4d7",
+    "key": "469d9b403bca11ed8a83cf002322a4d7",
+    "name": "石家庄",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "50e300403bca11ed8a83cf002322a4d7",
+        "key": "50e300403bca11ed8a83cf002322a4d7",
+        "name": "长安区",
+        "pid": "469d9b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "58c680703bca11ed8a83cf002322a4d7",
+        "key": "58c680703bca11ed8a83cf002322a4d7",
+        "name": "桥西区",
+        "pid": "469d9b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "5f29c9403bca11ed8a83cf002322a4d7",
+        "key": "5f29c9403bca11ed8a83cf002322a4d7",
+        "name": "新华区",
+        "pid": "469d9b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6535a3403bca11ed8a83cf002322a4d7",
+        "key": "6535a3403bca11ed8a83cf002322a4d7",
+        "name": "井陉矿区",
+        "pid": "469d9b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6aafeba03bca11ed8a83cf002322a4d7",
+        "key": "6aafeba03bca11ed8a83cf002322a4d7",
+        "name": "裕华区",
+        "pid": "469d9b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "700769c03bca11ed8a83cf002322a4d7",
+        "key": "700769c03bca11ed8a83cf002322a4d7",
+        "name": "藁城区",
+        "pid": "469d9b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "758b76203bca11ed8a83cf002322a4d7",
+        "key": "758b76203bca11ed8a83cf002322a4d7",
+        "name": "鹿泉区",
+        "pid": "469d9b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "7b7178a03bca11ed8a83cf002322a4d7",
+        "key": "7b7178a03bca11ed8a83cf002322a4d7",
+        "name": "栾城区",
+        "pid": "469d9b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "52ac92203bc911ed8a83cf002322a4d7",
+    "key": "52ac92203bc911ed8a83cf002322a4d7",
+    "name": "福州",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "5acb1f803bc911ed8a83cf002322a4d7",
+        "key": "5acb1f803bc911ed8a83cf002322a4d7",
+        "name": "鼓楼区",
+        "pid": "52ac92203bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "607b1de03bc911ed8a83cf002322a4d7",
+        "key": "607b1de03bc911ed8a83cf002322a4d7",
+        "name": "台江区",
+        "pid": "52ac92203bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6522acf03bc911ed8a83cf002322a4d7",
+        "key": "6522acf03bc911ed8a83cf002322a4d7",
+        "name": "仓山区",
+        "pid": "52ac92203bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6a45ad903bc911ed8a83cf002322a4d7",
+        "key": "6a45ad903bc911ed8a83cf002322a4d7",
+        "name": "马尾区",
+        "pid": "52ac92203bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6ef52be03bc911ed8a83cf002322a4d7",
+        "key": "6ef52be03bc911ed8a83cf002322a4d7",
+        "name": "长乐区",
+        "pid": "52ac92203bc911ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "56ab9860f38c11ecb8eae9d50e7721d7",
+    "key": "56ab9860f38c11ecb8eae9d50e7721d7",
+    "name": "南京",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "20124610ff3911ec86240f73f8f20435",
+        "key": "20124610ff3911ec86240f73f8f20435",
+        "name": "浦口区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "2783f1a0ff3911ec86240f73f8f20435",
+        "key": "2783f1a0ff3911ec86240f73f8f20435",
+        "name": "栖霞区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "2d60f370ff3911ec86240f73f8f20435",
+        "key": "2d60f370ff3911ec86240f73f8f20435",
+        "name": "溧水区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "34878c40ff3911ec86240f73f8f20435",
+        "key": "34878c40ff3911ec86240f73f8f20435",
+        "name": "雨花台区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "3d20c7e0ff3911ec86240f73f8f20435",
+        "key": "3d20c7e0ff3911ec86240f73f8f20435",
+        "name": "高淳区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "47f96c30ff3911ec86240f73f8f20435",
+        "key": "47f96c30ff3911ec86240f73f8f20435",
+        "name": "六合区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "4eae0950ff3911ec86240f73f8f20435",
+        "key": "4eae0950ff3911ec86240f73f8f20435",
+        "name": "建邺区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "5bc215e0f38c11ecb8eae9d50e7721d7",
+        "key": "5bc215e0f38c11ecb8eae9d50e7721d7",
+        "name": "玄武区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "6174ac50f38c11ecb8eae9d50e7721d7",
+        "key": "6174ac50f38c11ecb8eae9d50e7721d7",
+        "name": "秦淮区",
+        "pid": "56ab9860f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "5a6a57503bc811ed8a83cf002322a4d7",
+    "key": "5a6a57503bc811ed8a83cf002322a4d7",
+    "name": "沈阳",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "63b333e03bc811ed8a83cf002322a4d7",
+        "key": "63b333e03bc811ed8a83cf002322a4d7",
+        "name": "和平区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6bf37a103bc811ed8a83cf002322a4d7",
+        "key": "6bf37a103bc811ed8a83cf002322a4d7",
+        "name": "沈河区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "711123803bc811ed8a83cf002322a4d7",
+        "key": "711123803bc811ed8a83cf002322a4d7",
+        "name": "大东区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "75a922303bc811ed8a83cf002322a4d7",
+        "key": "75a922303bc811ed8a83cf002322a4d7",
+        "name": "皇姑区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "7b0868803bc811ed8a83cf002322a4d7",
+        "key": "7b0868803bc811ed8a83cf002322a4d7",
+        "name": "铁西区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "80a5f0503bc811ed8a83cf002322a4d7",
+        "key": "80a5f0503bc811ed8a83cf002322a4d7",
+        "name": "苏家屯区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "8566d3c03bc811ed8a83cf002322a4d7",
+        "key": "8566d3c03bc811ed8a83cf002322a4d7",
+        "name": "浑南区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "8a7a1cf03bc811ed8a83cf002322a4d7",
+        "key": "8a7a1cf03bc811ed8a83cf002322a4d7",
+        "name": "沈北新区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "8f92bd503bc811ed8a83cf002322a4d7",
+        "key": "8f92bd503bc811ed8a83cf002322a4d7",
+        "name": "于洪区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "942082d03bc811ed8a83cf002322a4d7",
+        "key": "942082d03bc811ed8a83cf002322a4d7",
+        "name": "辽中区",
+        "pid": "5a6a57503bc811ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "614e3a703bcb11ed8a83cf002322a4d7",
+    "key": "614e3a703bcb11ed8a83cf002322a4d7",
+    "name": "保定",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "66dddf903bcb11ed8a83cf002322a4d7",
+        "key": "66dddf903bcb11ed8a83cf002322a4d7",
+        "name": "竞秀区",
+        "pid": "614e3a703bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6c4563403bcb11ed8a83cf002322a4d7",
+        "key": "6c4563403bcb11ed8a83cf002322a4d7",
+        "name": "莲池区",
+        "pid": "614e3a703bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "710fbc903bcb11ed8a83cf002322a4d7",
+        "key": "710fbc903bcb11ed8a83cf002322a4d7",
+        "name": "满城区",
+        "pid": "614e3a703bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "766ae4303bcb11ed8a83cf002322a4d7",
+        "key": "766ae4303bcb11ed8a83cf002322a4d7",
+        "name": "清苑区",
+        "pid": "614e3a703bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "7ba564703bcb11ed8a83cf002322a4d7",
+        "key": "7ba564703bcb11ed8a83cf002322a4d7",
+        "name": "徐水区",
+        "pid": "614e3a703bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "65680690f38c11ecb8eae9d50e7721d7",
+    "key": "65680690f38c11ecb8eae9d50e7721d7",
+    "name": "天津",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "6a4fd2f0f38c11ecb8eae9d50e7721d7",
+        "key": "6a4fd2f0f38c11ecb8eae9d50e7721d7",
+        "name": "滨海新区",
+        "pid": "65680690f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "6fb1b150f38c11ecb8eae9d50e7721d7",
+        "key": "6fb1b150f38c11ecb8eae9d50e7721d7",
+        "name": "和平区",
+        "pid": "65680690f38c11ecb8eae9d50e7721d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "664bd5903bc711ed8a83cf002322a4d7",
+    "key": "664bd5903bc711ed8a83cf002322a4d7",
+    "name": "佛山",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "6ba8d1f03bc711ed8a83cf002322a4d7",
+        "key": "6ba8d1f03bc711ed8a83cf002322a4d7",
+        "name": "禅城区",
+        "pid": "664bd5903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "713199403bc711ed8a83cf002322a4d7",
+        "key": "713199403bc711ed8a83cf002322a4d7",
+        "name": "南海区",
+        "pid": "664bd5903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "772c0e203bc711ed8a83cf002322a4d7",
+        "key": "772c0e203bc711ed8a83cf002322a4d7",
+        "name": "顺德区",
+        "pid": "664bd5903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "7bc8a0b03bc711ed8a83cf002322a4d7",
+        "key": "7bc8a0b03bc711ed8a83cf002322a4d7",
+        "name": "三水区",
+        "pid": "664bd5903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "804bb7d03bc711ed8a83cf002322a4d7",
+        "key": "804bb7d03bc711ed8a83cf002322a4d7",
+        "name": "高明区",
+        "pid": "664bd5903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "7bfae9603bc911ed8a83cf002322a4d7",
+    "key": "7bfae9603bc911ed8a83cf002322a4d7",
+    "name": "哈尔滨",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "81e272803bc911ed8a83cf002322a4d7",
+        "key": "81e272803bc911ed8a83cf002322a4d7",
+        "name": "道里区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "88d06f203bc911ed8a83cf002322a4d7",
+        "key": "88d06f203bc911ed8a83cf002322a4d7",
+        "name": "南岗区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "8d291ae03bc911ed8a83cf002322a4d7",
+        "key": "8d291ae03bc911ed8a83cf002322a4d7",
+        "name": "道外区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "916a95203bc911ed8a83cf002322a4d7",
+        "key": "916a95203bc911ed8a83cf002322a4d7",
+        "name": "平房区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "97081cf03bc911ed8a83cf002322a4d7",
+        "key": "97081cf03bc911ed8a83cf002322a4d7",
+        "name": "松北区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "9c7d83503bc911ed8a83cf002322a4d7",
+        "key": "9c7d83503bc911ed8a83cf002322a4d7",
+        "name": "香坊区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "a2a1c7503bc911ed8a83cf002322a4d7",
+        "key": "a2a1c7503bc911ed8a83cf002322a4d7",
+        "name": "呼兰区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "a7facc103bc911ed8a83cf002322a4d7",
+        "key": "a7facc103bc911ed8a83cf002322a4d7",
+        "name": "阿城区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "af5e6de03bc911ed8a83cf002322a4d7",
+        "key": "af5e6de03bc911ed8a83cf002322a4d7",
+        "name": "双城区",
+        "pid": "7bfae9603bc911ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "8d261f903bc711ed8a83cf002322a4d7",
+    "key": "8d261f903bc711ed8a83cf002322a4d7",
+    "name": "合肥",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "9fbd7e003bc711ed8a83cf002322a4d7",
+        "key": "9fbd7e003bc711ed8a83cf002322a4d7",
+        "name": "瑶海区",
+        "pid": "8d261f903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "bd1d54203bc711ed8a83cf002322a4d7",
+        "key": "bd1d54203bc711ed8a83cf002322a4d7",
+        "name": "庐阳区",
+        "pid": "8d261f903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "c28155603bc711ed8a83cf002322a4d7",
+        "key": "c28155603bc711ed8a83cf002322a4d7",
+        "name": "蜀山区",
+        "pid": "8d261f903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "c780a1603bc711ed8a83cf002322a4d7",
+        "key": "c780a1603bc711ed8a83cf002322a4d7",
+        "name": "包河区",
+        "pid": "8d261f903bc711ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "90b5b2203bcb11ed8a83cf002322a4d7",
+    "key": "90b5b2203bcb11ed8a83cf002322a4d7",
+    "name": "珠海",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "9b261ec03bcb11ed8a83cf002322a4d7",
+        "key": "9b261ec03bcb11ed8a83cf002322a4d7",
+        "name": "香洲区",
+        "pid": "90b5b2203bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "a16899203bcb11ed8a83cf002322a4d7",
+        "key": "a16899203bcb11ed8a83cf002322a4d7",
+        "name": "斗门区",
+        "pid": "90b5b2203bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "a5b0f1303bcb11ed8a83cf002322a4d7",
+        "key": "a5b0f1303bcb11ed8a83cf002322a4d7",
+        "name": "金湾区",
+        "pid": "90b5b2203bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "928bb190ff3911ec86240f73f8f20435",
+    "key": "928bb190ff3911ec86240f73f8f20435",
+    "name": "西安",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "98eeac40ff3911ec86240f73f8f20435",
+        "key": "98eeac40ff3911ec86240f73f8f20435",
+        "name": "未央区",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "a12ccf90ff3911ec86240f73f8f20435",
+        "key": "a12ccf90ff3911ec86240f73f8f20435",
+        "name": "莲湖区",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "a73fd580ff3911ec86240f73f8f20435",
+        "key": "a73fd580ff3911ec86240f73f8f20435",
+        "name": "阎良区",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "adbe6e80ff3911ec86240f73f8f20435",
+        "key": "adbe6e80ff3911ec86240f73f8f20435",
+        "name": "鄠邑区",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "b3fdb490ff3911ec86240f73f8f20435",
+        "key": "b3fdb490ff3911ec86240f73f8f20435",
+        "name": "临潼区",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "b9734200ff3911ec86240f73f8f20435",
+        "key": "b9734200ff3911ec86240f73f8f20435",
+        "name": "蓝田县",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "bf1dc220ff3911ec86240f73f8f20435",
+        "key": "bf1dc220ff3911ec86240f73f8f20435",
+        "name": "周至县",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "c4ec6c10ff3911ec86240f73f8f20435",
+        "key": "c4ec6c10ff3911ec86240f73f8f20435",
+        "name": "高陵区",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "ca8b7a80ff3911ec86240f73f8f20435",
+        "key": "ca8b7a80ff3911ec86240f73f8f20435",
+        "name": "灞桥区",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      },
+      {
+        "id": "d0bd2c00ff3911ec86240f73f8f20435",
+        "key": "d0bd2c00ff3911ec86240f73f8f20435",
+        "name": "碑林区",
+        "pid": "928bb190ff3911ec86240f73f8f20435",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "93d3a3b03bba11ed8a83cf002322a4d7",
+    "key": "93d3a3b03bba11ed8a83cf002322a4d7",
+    "name": "深圳",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "3b8727703bc611ed8a83cf002322a4d7",
+        "key": "3b8727703bc611ed8a83cf002322a4d7",
+        "name": "罗湖区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "440b2d603bc611ed8a83cf002322a4d7",
+        "key": "440b2d603bc611ed8a83cf002322a4d7",
+        "name": "福田区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "4cbef5e03bc611ed8a83cf002322a4d7",
+        "key": "4cbef5e03bc611ed8a83cf002322a4d7",
+        "name": "南山区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "535731603bc611ed8a83cf002322a4d7",
+        "key": "535731603bc611ed8a83cf002322a4d7",
+        "name": "宝安区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "5a2a2bf03bc611ed8a83cf002322a4d7",
+        "key": "5a2a2bf03bc611ed8a83cf002322a4d7",
+        "name": "龙岗区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "608b51e03bc611ed8a83cf002322a4d7",
+        "key": "608b51e03bc611ed8a83cf002322a4d7",
+        "name": "盐田区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "657408a03bc611ed8a83cf002322a4d7",
+        "key": "657408a03bc611ed8a83cf002322a4d7",
+        "name": "龙华区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6a6f5d003bc611ed8a83cf002322a4d7",
+        "key": "6a6f5d003bc611ed8a83cf002322a4d7",
+        "name": "坪山区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "6fbcc9003bc611ed8a83cf002322a4d7",
+        "key": "6fbcc9003bc611ed8a83cf002322a4d7",
+        "name": "光明区",
+        "pid": "93d3a3b03bba11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "98b53b403bca11ed8a83cf002322a4d7",
+    "key": "98b53b403bca11ed8a83cf002322a4d7",
+    "name": "长春",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "a35199e03bca11ed8a83cf002322a4d7",
+        "key": "a35199e03bca11ed8a83cf002322a4d7",
+        "name": "南关区",
+        "pid": "98b53b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "a8a399c03bca11ed8a83cf002322a4d7",
+        "key": "a8a399c03bca11ed8a83cf002322a4d7",
+        "name": "宽城区",
+        "pid": "98b53b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "acc8d9703bca11ed8a83cf002322a4d7",
+        "key": "acc8d9703bca11ed8a83cf002322a4d7",
+        "name": "二道区",
+        "pid": "98b53b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "b1241d403bca11ed8a83cf002322a4d7",
+        "key": "b1241d403bca11ed8a83cf002322a4d7",
+        "name": "绿园区",
+        "pid": "98b53b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "b5e1cc603bca11ed8a83cf002322a4d7",
+        "key": "b5e1cc603bca11ed8a83cf002322a4d7",
+        "name": "双阳区",
+        "pid": "98b53b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "bb1dfa503bca11ed8a83cf002322a4d7",
+        "key": "bb1dfa503bca11ed8a83cf002322a4d7",
+        "name": "九台区",
+        "pid": "98b53b403bca11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "9d6553f0f38b11ecb8eae9d50e7721d7",
+    "key": "9d6553f0f38b11ecb8eae9d50e7721d7",
+    "name": "重庆",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "a9095e90f38b11ecb8eae9d50e7721d7",
+        "key": "a9095e90f38b11ecb8eae9d50e7721d7",
+        "name": "万州区",
+        "pid": "9d6553f0f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "aeb1bbd0f38b11ecb8eae9d50e7721d7",
+        "key": "aeb1bbd0f38b11ecb8eae9d50e7721d7",
+        "name": "黔江区",
+        "pid": "9d6553f0f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "9d8cb0c03bc611ed8a83cf002322a4d7",
+    "key": "9d8cb0c03bc611ed8a83cf002322a4d7",
+    "name": "苏州",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "acb6fbf03bc611ed8a83cf002322a4d7",
+        "key": "acb6fbf03bc611ed8a83cf002322a4d7",
+        "name": "虎丘区",
+        "pid": "9d8cb0c03bc611ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "b32fc8903bc611ed8a83cf002322a4d7",
+        "key": "b32fc8903bc611ed8a83cf002322a4d7",
+        "name": "吴中区",
+        "pid": "9d8cb0c03bc611ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "b97cca403bc611ed8a83cf002322a4d7",
+        "key": "b97cca403bc611ed8a83cf002322a4d7",
+        "name": "相城区",
+        "pid": "9d8cb0c03bc611ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "be3d11703bc611ed8a83cf002322a4d7",
+        "key": "be3d11703bc611ed8a83cf002322a4d7",
+        "name": "姑苏区",
+        "pid": "9d8cb0c03bc611ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "c3f9e1103bc611ed8a83cf002322a4d7",
+        "key": "c3f9e1103bc611ed8a83cf002322a4d7",
+        "name": "吴江区",
+        "pid": "9d8cb0c03bc611ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "aa3fa8703bc811ed8a83cf002322a4d7",
+    "key": "aa3fa8703bc811ed8a83cf002322a4d7",
+    "name": "济南",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "b06e9ad03bc811ed8a83cf002322a4d7",
+        "key": "b06e9ad03bc811ed8a83cf002322a4d7",
+        "name": "历下区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "b56beb003bc811ed8a83cf002322a4d7",
+        "key": "b56beb003bc811ed8a83cf002322a4d7",
+        "name": "市中区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "ba3077f03bc811ed8a83cf002322a4d7",
+        "key": "ba3077f03bc811ed8a83cf002322a4d7",
+        "name": "槐荫区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "bec283303bc811ed8a83cf002322a4d7",
+        "key": "bec283303bc811ed8a83cf002322a4d7",
+        "name": "天桥区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "c8c90a703bc811ed8a83cf002322a4d7",
+        "key": "c8c90a703bc811ed8a83cf002322a4d7",
+        "name": "历城区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "ceb268503bc811ed8a83cf002322a4d7",
+        "key": "ceb268503bc811ed8a83cf002322a4d7",
+        "name": "长清区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "d4ada0803bc811ed8a83cf002322a4d7",
+        "key": "d4ada0803bc811ed8a83cf002322a4d7",
+        "name": "章丘区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "da5b2de03bc811ed8a83cf002322a4d7",
+        "key": "da5b2de03bc811ed8a83cf002322a4d7",
+        "name": "济阳区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "df5aa0f03bc811ed8a83cf002322a4d7",
+        "key": "df5aa0f03bc811ed8a83cf002322a4d7",
+        "name": "莱芜区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "e4016cb03bc811ed8a83cf002322a4d7",
+        "key": "e4016cb03bc811ed8a83cf002322a4d7",
+        "name": "钢城区",
+        "pid": "aa3fa8703bc811ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "ae17f9403bcb11ed8a83cf002322a4d7",
+    "key": "ae17f9403bcb11ed8a83cf002322a4d7",
+    "name": "烟台",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "b6d9f2903bcb11ed8a83cf002322a4d7",
+        "key": "b6d9f2903bcb11ed8a83cf002322a4d7",
+        "name": "芝罘区",
+        "pid": "ae17f9403bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "c12d13303bcb11ed8a83cf002322a4d7",
+        "key": "c12d13303bcb11ed8a83cf002322a4d7",
+        "name": "福山区",
+        "pid": "ae17f9403bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "c73d0be03bcb11ed8a83cf002322a4d7",
+        "key": "c73d0be03bcb11ed8a83cf002322a4d7",
+        "name": "牟平区",
+        "pid": "ae17f9403bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "cc53d7803bcb11ed8a83cf002322a4d7",
+        "key": "cc53d7803bcb11ed8a83cf002322a4d7",
+        "name": "莱山区",
+        "pid": "ae17f9403bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "d0e08b903bcb11ed8a83cf002322a4d7",
+        "key": "d0e08b903bcb11ed8a83cf002322a4d7",
+        "name": "蓬莱区",
+        "pid": "ae17f9403bcb11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "b6b5e360f38b11ecb8eae9d50e7721d7",
+    "key": "b6b5e360f38b11ecb8eae9d50e7721d7",
+    "name": "广州",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "424321b0ff3811ec86240f73f8f20435",
+        "key": "424321b0ff3811ec86240f73f8f20435",
+        "name": "天河区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "496303c0ff3811ec86240f73f8f20435",
+        "key": "496303c0ff3811ec86240f73f8f20435",
+        "name": "黄埔区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "506a2db0ff3811ec86240f73f8f20435",
+        "key": "506a2db0ff3811ec86240f73f8f20435",
+        "name": "从化区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "59960c60ff3811ec86240f73f8f20435",
+        "key": "59960c60ff3811ec86240f73f8f20435",
+        "name": "番禺区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "5fa038b0ff3811ec86240f73f8f20435",
+        "key": "5fa038b0ff3811ec86240f73f8f20435",
+        "name": "增城区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "6616bb60ff3811ec86240f73f8f20435",
+        "key": "6616bb60ff3811ec86240f73f8f20435",
+        "name": "花都区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "c4db8fd0f38b11ecb8eae9d50e7721d7",
+        "key": "c4db8fd0f38b11ecb8eae9d50e7721d7",
+        "name": "越秀区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "ce723e40f38b11ecb8eae9d50e7721d7",
+        "key": "ce723e40f38b11ecb8eae9d50e7721d7",
+        "name": "荔湾区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "dc082dd0f38b11ecb8eae9d50e7721d7",
+        "key": "dc082dd0f38b11ecb8eae9d50e7721d7",
+        "name": "海珠区",
+        "pid": "b6b5e360f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "d01e42703bca11ed8a83cf002322a4d7",
+    "key": "d01e42703bca11ed8a83cf002322a4d7",
+    "name": "南昌",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "d73942803bca11ed8a83cf002322a4d7",
+        "key": "d73942803bca11ed8a83cf002322a4d7",
+        "name": "东湖区",
+        "pid": "d01e42703bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "e2f9aec03bca11ed8a83cf002322a4d7",
+        "key": "e2f9aec03bca11ed8a83cf002322a4d7",
+        "name": "西湖区",
+        "pid": "d01e42703bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "e76260103bca11ed8a83cf002322a4d7",
+        "key": "e76260103bca11ed8a83cf002322a4d7",
+        "name": "青云谱区",
+        "pid": "d01e42703bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "ecce77a03bca11ed8a83cf002322a4d7",
+        "key": "ecce77a03bca11ed8a83cf002322a4d7",
+        "name": "青山湖区",
+        "pid": "d01e42703bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "f1703a503bca11ed8a83cf002322a4d7",
+        "key": "f1703a503bca11ed8a83cf002322a4d7",
+        "name": "新建区",
+        "pid": "d01e42703bca11ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "f5befb003bca11ed8a83cf002322a4d7",
+        "key": "f5befb003bca11ed8a83cf002322a4d7",
+        "name": "红谷滩区",
+        "pid": "d01e42703bca11ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "d2aecdd03bc911ed8a83cf002322a4d7",
+    "key": "d2aecdd03bc911ed8a83cf002322a4d7",
+    "name": "大连",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "0478eda03bca11ed8a83cf002322a4d7",
+        "key": "0478eda03bca11ed8a83cf002322a4d7",
+        "name": "普兰店区",
+        "pid": "d2aecdd03bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "d8c3f6a03bc911ed8a83cf002322a4d7",
+        "key": "d8c3f6a03bc911ed8a83cf002322a4d7",
+        "name": "中山区",
+        "pid": "d2aecdd03bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "e3940f703bc911ed8a83cf002322a4d7",
+        "key": "e3940f703bc911ed8a83cf002322a4d7",
+        "name": "西岗区",
+        "pid": "d2aecdd03bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "ec79e4703bc911ed8a83cf002322a4d7",
+        "key": "ec79e4703bc911ed8a83cf002322a4d7",
+        "name": "沙河口区",
+        "pid": "d2aecdd03bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "f182cd603bc911ed8a83cf002322a4d7",
+        "key": "f182cd603bc911ed8a83cf002322a4d7",
+        "name": "甘井子区",
+        "pid": "d2aecdd03bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "f7b5de703bc911ed8a83cf002322a4d7",
+        "key": "f7b5de703bc911ed8a83cf002322a4d7",
+        "name": "旅顺口区",
+        "pid": "d2aecdd03bc911ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "fe104da03bc911ed8a83cf002322a4d7",
+        "key": "fe104da03bc911ed8a83cf002322a4d7",
+        "name": "金州区",
+        "pid": "d2aecdd03bc911ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "d7f742b03bc711ed8a83cf002322a4d7",
+    "key": "d7f742b03bc711ed8a83cf002322a4d7",
+    "name": "青岛",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "df1131503bc711ed8a83cf002322a4d7",
+        "key": "df1131503bc711ed8a83cf002322a4d7",
+        "name": "市南区",
+        "pid": "d7f742b03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "e624b7503bc711ed8a83cf002322a4d7",
+        "key": "e624b7503bc711ed8a83cf002322a4d7",
+        "name": "市北区",
+        "pid": "d7f742b03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "eb3c94603bc711ed8a83cf002322a4d7",
+        "key": "eb3c94603bc711ed8a83cf002322a4d7",
+        "name": "黄岛区",
+        "pid": "d7f742b03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "f091c8903bc711ed8a83cf002322a4d7",
+        "key": "f091c8903bc711ed8a83cf002322a4d7",
+        "name": "崂山区",
+        "pid": "d7f742b03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "f6bc9c403bc711ed8a83cf002322a4d7",
+        "key": "f6bc9c403bc711ed8a83cf002322a4d7",
+        "name": "李沧区",
+        "pid": "d7f742b03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "fefd09803bc711ed8a83cf002322a4d7",
+        "key": "fefd09803bc711ed8a83cf002322a4d7",
+        "name": "即墨区",
+        "pid": "d7f742b03bc711ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "e1340810f38b11ecb8eae9d50e7721d7",
+    "key": "e1340810f38b11ecb8eae9d50e7721d7",
+    "name": "成都",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "20a99980ff3811ec86240f73f8f20435",
+        "key": "20a99980ff3811ec86240f73f8f20435",
+        "name": "彭州市",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "26ac4bc0ff3811ec86240f73f8f20435",
+        "key": "26ac4bc0ff3811ec86240f73f8f20435",
+        "name": "邛崃市",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "2be45070ff3711ec86240f73f8f20435",
+        "key": "2be45070ff3711ec86240f73f8f20435",
+        "name": "武侯区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "30018460ff3811ec86240f73f8f20435",
+        "key": "30018460ff3811ec86240f73f8f20435",
+        "name": "简阳市",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "33aa3680ff3711ec86240f73f8f20435",
+        "key": "33aa3680ff3711ec86240f73f8f20435",
+        "name": "青羊区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "3b0fd420ff3711ec86240f73f8f20435",
+        "key": "3b0fd420ff3711ec86240f73f8f20435",
+        "name": "成华区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "443d6080ff3711ec86240f73f8f20435",
+        "key": "443d6080ff3711ec86240f73f8f20435",
+        "name": "新都区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "5140ad00ff3711ec86240f73f8f20435",
+        "key": "5140ad00ff3711ec86240f73f8f20435",
+        "name": "龙泉驿区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "57e803b0ff3711ec86240f73f8f20435",
+        "key": "57e803b0ff3711ec86240f73f8f20435",
+        "name": "郫都区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "63f61ac0ff3711ec86240f73f8f20435",
+        "key": "63f61ac0ff3711ec86240f73f8f20435",
+        "name": "青白江区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "f5afdc30ff3711ec86240f73f8f20435",
+        "key": "f5afdc30ff3711ec86240f73f8f20435",
+        "name": "金牛区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      },
+      {
+        "id": "fd4e1600ff3711ec86240f73f8f20435",
+        "key": "fd4e1600ff3711ec86240f73f8f20435",
+        "name": "锦江区",
+        "pid": "e1340810f38b11ecb8eae9d50e7721d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "e2e364703bc611ed8a83cf002322a4d7",
+    "key": "e2e364703bc611ed8a83cf002322a4d7",
+    "name": "东莞",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "04a471d03bc711ed8a83cf002322a4d7",
+        "key": "04a471d03bc711ed8a83cf002322a4d7",
+        "name": "南城街道",
+        "pid": "e2e364703bc611ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "097c38a03bc711ed8a83cf002322a4d7",
+        "key": "097c38a03bc711ed8a83cf002322a4d7",
+        "name": "东城街道",
+        "pid": "e2e364703bc611ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "10378c803bc711ed8a83cf002322a4d7",
+        "key": "10378c803bc711ed8a83cf002322a4d7",
+        "name": "万江街道",
+        "pid": "e2e364703bc611ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "fdf330103bc611ed8a83cf002322a4d7",
+        "key": "fdf330103bc611ed8a83cf002322a4d7",
+        "name": "莞城街道",
+        "pid": "e2e364703bc611ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  },
+  {
+    "id": "f18f6d003bc811ed8a83cf002322a4d7",
+    "key": "f18f6d003bc811ed8a83cf002322a4d7",
+    "name": "无锡",
+    "pid": "",
+    "sort": 50,
+    "children": [
+      {
+        "id": "043ceb803bc911ed8a83cf002322a4d7",
+        "key": "043ceb803bc911ed8a83cf002322a4d7",
+        "name": "滨湖区",
+        "pid": "f18f6d003bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "08ed2d203bc911ed8a83cf002322a4d7",
+        "key": "08ed2d203bc911ed8a83cf002322a4d7",
+        "name": "梁溪区",
+        "pid": "f18f6d003bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "0dc1bfa03bc911ed8a83cf002322a4d7",
+        "key": "0dc1bfa03bc911ed8a83cf002322a4d7",
+        "name": "新吴区",
+        "pid": "f18f6d003bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "f71e27c03bc811ed8a83cf002322a4d7",
+        "key": "f71e27c03bc811ed8a83cf002322a4d7",
+        "name": "锡山区",
+        "pid": "f18f6d003bc811ed8a83cf002322a4d7",
+        "sort": 50
+      },
+      {
+        "id": "ff56a5c03bc811ed8a83cf002322a4d7",
+        "key": "ff56a5c03bc811ed8a83cf002322a4d7",
+        "name": "惠山区",
+        "pid": "f18f6d003bc811ed8a83cf002322a4d7",
+        "sort": 50
+      }
+    ]
+  }
+]
