@@ -1,0 +1,1 @@
+import{a as t}from"./request-DXWkTHKF.js";function r(o){return t({url:"/login/code",method:"post",data:o})}function n(o){return t({url:"/login",method:"post",data:o})}function i(o){return t({url:"/policy_protocol/list",method:"get",params:o})}export{i as a,r as g,n as l};
