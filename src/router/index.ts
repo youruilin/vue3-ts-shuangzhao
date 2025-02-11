@@ -25,6 +25,7 @@ router.beforeEach((to, from, next) => {
   if (store.token) {
     // 检查是否为首页路径，如果是则跳转到 /task
     if (to.path === '/') {
+      console.log(basePath)
       next('/task')
     } else {
       next()
@@ -35,6 +36,7 @@ router.beforeEach((to, from, next) => {
       to.path === basePath + '/login/ServiceAgree' ||
       to.path === basePath + '/login/PrivatePolicy'
     ) {
+      console.log(basePath)
       next()
     } else {
       console.log(basePath)
