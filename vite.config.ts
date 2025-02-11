@@ -9,7 +9,7 @@ import { VantResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/HexoSouceCode/' : '/', // 设置根路径
+  base: process.env.NODE_ENV === 'production' ? '/vue3-ts-shuangzhao/' : '/', // 设置根路径
   plugins: [
     vue(),
     vueJsx(),
