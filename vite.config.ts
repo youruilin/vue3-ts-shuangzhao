@@ -38,7 +38,7 @@ export default defineConfig({
     port: 5173,
     open: true,
     proxy: {
-      '/api': 'http://127.0.0.1:3007'
+      '/api': 'http://aws_ele.iooio.cn:3007'
     },
     cors: true // 在开发阶段不需要手动设置服务器端的 CORS 头信息即可进行跨域请求，节省时间。
   },
