@@ -1,1 +1,0 @@
-import{_ as e,r as t,L as o,c as s,o as r,a9 as _}from"./index-CgSk28W2.js";const c={__name:"[id]",setup(n){const a=t("");return o(()=>{a.value=import.meta.url}),(l,p)=>(r(),s("div",null,_(a.value),1))}},u=e(c,[["__scopeId","data-v-38fa0d27"]]);export{u as default};
