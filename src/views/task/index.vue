@@ -16,7 +16,7 @@ const store = taskStore()
 const state = reactive({
   citySwitch: false,
   positionSwitch: false,
-  // positionValue: '',
+  positionValue: '',
   screenSwitch: false,
   serviceMode: '',
   taskCycle: '',
@@ -33,7 +33,7 @@ const getTaskAllList = async () => {
   state.loading = true
   if (state.pageNum == 1) state.taskList = []
   const res = await taskAllList({
-    position_name: store.positionValue,
+    position_name: state.positionValue,
     service_mode: state.serviceMode,
     task_cycle: state.taskCycle,
     pageNum: state.pageNum,
@@ -78,8 +78,8 @@ const closeCitySwitch = (name: string) => {
 
 const closePositionType = (p?: string) => {
   if (p) {
-    // state.positionValue = p
-    store.setPositionValue(p)
+    state.positionValue = p
+    // store.setPositionValue(p)
     onRefresh()
   }
   state.positionSwitch = false
@@ -107,7 +107,6 @@ provide('popup', {
 const onLoad = () => {
   // 正因为 onLoad 的自动执行, 导致首次调用 getTaskAllList() 函数前, 给 pageNum 赋值为 1 , 传递给后端
   state.pageNum = state.pageNum + 1
-  store.setCityValue('東京')
   getTaskAllList()
   console.log('onLoad触底执行了一次')
 }
@@ -138,7 +137,7 @@ const goSearch = () => {
     <div class="task-title">
       <h3>最新のタスク</h3>
       <div class="task-position-pop" @click="state.positionSwitch = true">
-        {{ store.positionValue || '职位类型' }}<span></span>
+        {{ state.positionValue || '职位类型' }}<span></span>
       </div>
       <div class="task-screen-pop" @click="state.screenSwitch = true">筛选<span></span></div>
     </div>
