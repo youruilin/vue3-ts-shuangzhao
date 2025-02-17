@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia'
+import fetchWithBaseUrl from '@/utils/fetch'
+
 // import { cityList } from '../api/task'
 
 // 定义 City 类型
@@ -245,7 +247,7 @@ export const taskStore = defineStore({
     },
     async getCityList() {
       try {
-        const response = await fetch('/data/cityList.json')
+        const response = await fetchWithBaseUrl('/data/cityList.json')
         const res = (await response.json()) as City[]
 
         if (res) {
