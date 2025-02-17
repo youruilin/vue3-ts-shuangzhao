@@ -1,1 +1,0 @@
-import{_ as a,r as t,L as o,c,o as n,a9 as s}from"./index-DPZV09Hk.js";const r={__name:"AcountAdvance",setup(_){const e=t("");return o(()=>{e.value=import.meta.url}),(l,u)=>(n(),c("div",null,s(e.value),1))}},d=a(r,[["__scopeId","data-v-707e4799"]]);export{d as default};
