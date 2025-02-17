@@ -3,7 +3,7 @@ const fetchWithBaseUrl = url => {
   const baseUrl = import.meta.env.VITE_PUBLIC_URL || '/' // 默认值为根路径（开发环境）
 
   // 拼接完整的请求路径
-  const fullUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}${url}`
+  const fullUrl = `${baseUrl}${url}`
 
   // 调用原生的 fetch 方法
   return fetch(fullUrl)
