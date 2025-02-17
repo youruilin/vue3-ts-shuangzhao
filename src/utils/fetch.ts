@@ -1,7 +1,7 @@
 // src/utils/fetchWithBaseUrl.js
 const fetchWithBaseUrl = (url, options?) => {
   // 获取环境变量中的 PUBLIC_URL
-  const baseUrl = process.env.PUBLIC_URL || '' // import.meta.env 也可以获取环境变量
+  const baseUrl = import.meta.env.PUBLIC_URL || '' // import.meta.env 也可以获取环境变量
 
   // 拼接完整的请求路径
   const fullUrl = `${baseUrl}${url}`
