@@ -3,7 +3,7 @@
     {
       "id": 15, 
   
-      "picture": "/data/img/banner-1.png", 
+      "picture": "vue3-ts-shuangzhao/data/img/banner-1.png", 
       
       "name": "it求职端2", 
       
@@ -13,7 +13,7 @@
       
       "type": 2, 
       
-      "url": "https://mobile.zcwytd.com/#/pages/login/choice/index", 
+      "url": "https://youruilin.github.io/index_blog", 
       
       "create_time": "2022-06-28T13:03:53.000Z", 
       
@@ -23,7 +23,7 @@
     {
       "id": 16, 
       
-      "picture": "/data/img/banner-2.png", 
+      "picture": "vue3-ts-shuangzhao/data/img/banner-2.png", 
       
       "name": "it求职端1", 
       
@@ -33,7 +33,7 @@
       
       "type": 2, 
       
-      "url": "https://mobile.zcwytd.com/#/pages/login/choice/index", 
+      "url": "https://youruilin.github.io/index_blog", 
       
       "create_time": "2022-06-28T13:05:33.000Z", 
       
