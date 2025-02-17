@@ -3,12 +3,14 @@ import { taskStore } from '@/stores/task'
 // import { bannerList } from '@/api/task'
 import { showToast } from 'vant'
 
+import fetchWithBaseUrl from '@/utils/fetch'
+
 const store = taskStore()
 
 const getBannerList = async () => {
   try {
     // 使用 fetch 从本地 JSON 文件加载数据
-    const response = await fetch('/data/banner.json') // 假设文件在 public/data/banner.json
+    const response = await fetchWithBaseUrl('/data/banner.json') // 假设文件在 public/data/banner.json
     if (!response.ok) {
       throw new Error('无法加载本地数据')
     }
