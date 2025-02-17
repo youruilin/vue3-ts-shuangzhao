@@ -4,6 +4,8 @@ import { inject, reactive } from 'vue'
 // import { screenList } from '@/api/task'
 import { taskStore } from '@/stores/task'
 
+import fetchWithBaseUrl from '@/utils/fetch'
+
 interface PopupContext {
   closeTaskScreen: (obj?) => void
 }
@@ -40,7 +42,7 @@ const clearScreen = () => {
 }
 
 const getScreenList = async () => {
-  const response = await fetch('/data/screenlist.json')
+  const response = await fetchWithBaseUrl('/data/screenlist.json')
   interface ScreenListResponse {
     data: {
       serviceMode: string[]
