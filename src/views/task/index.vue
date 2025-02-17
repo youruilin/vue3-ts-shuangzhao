@@ -107,6 +107,7 @@ provide('popup', {
 const onLoad = () => {
   // 正因为 onLoad 的自动执行, 导致首次调用 getTaskAllList() 函数前, 给 pageNum 赋值为 1 , 传递给后端
   state.pageNum = state.pageNum + 1
+  store.setCityValue('東京')
   getTaskAllList()
   console.log('onLoad触底执行了一次')
 }
