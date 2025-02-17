@@ -1,10 +1,12 @@
 // src/utils/fetchWithBaseUrl.js
 const fetchWithBaseUrl = url => {
-  // 获取环境变量中的 PUBLIC_URL
-  const baseUrl = import.meta.env.PUBLIC_URL || '/' // import.meta.env 也可以获取环境变量
+  // 获取环境变量中的 VITE_PUBLIC_URL，默认值为 '/'
+  const baseUrl = import.meta.env.VITE_PUBLIC_URL || '/'
+  console.log('baseUrl', baseUrl)
 
-  // 拼接完整的请求路径
-  const fullUrl = `${baseUrl}${url}`
+  // 确保 baseUrl 以 / 结尾
+  const fullUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}${url}`
+  console.log('fullUrl', fullUrl)
 
   // 调用原生的 fetch 方法
   return fetch(fullUrl)
