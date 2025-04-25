@@ -22,7 +22,7 @@ const gotoPage = path => {
     <div class="my-info">
       <img v-if="store.userInfo.it_head" :src="store.userInfo.it_head" alt="" />
       <img v-else src="@/assets/img/icon/icon-message.png" alt="" />
-      <div>
+      <div @click="gotoPage('/my/user')">
         <h3>{{ store.userInfo.user_name }}<span></span></h3>
         <p>IT企业人才</p>
         <i></i>

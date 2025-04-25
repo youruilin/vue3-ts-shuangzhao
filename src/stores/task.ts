@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
-import fetchWithBaseUrl from '@/utils/fetch'
+// import fetchWithBaseUrl from '@/utils/fetch'
 
-// import { cityList } from '../api/task'
+import { cityList } from '../api/task'
 
 // 定义 City 类型
 // interface City {
@@ -230,7 +230,7 @@ export const taskStore = defineStore({
   id: 'task',
   state: () => {
     return {
-      cityValue: localStorage.getItem('city') || '東京', // 从 localStorage 获取初始值
+      cityValue: localStorage.getItem('city') || '北京', // 从 localStorage 获取初始值
       cityList: [] as City[], // 使用 City 数组类型
       bannerList: [] as getBanner[],
       positionValue: '', // 从 localStorage 获取初始值
@@ -245,63 +245,63 @@ export const taskStore = defineStore({
       this.cityValue = value
       localStorage.setItem('city', value) // 将新的 cityValue 存入 localStorage
     },
-    async getCityList() {
-      try {
-        const response = await fetchWithBaseUrl('/data/cityList.json')
-        const res = (await response.json()) as City[]
-
-        if (res) {
-          this.cityList = res
-          const city: Area[] = []
-
-          for (let i = 0; i < res.length; i++) {
-            city.push({
-              text: res[i].name,
-              value: res[i].key,
-              children: []
-            })
-
-            if (res[i].children && res[i].children?.length) {
-              for (let j = 0; j < res[i].children.length; j++) {
-                city[i].children.push({
-                  text: res[i].children[j].name,
-                  value: res[i].children[j].key
-                })
-              }
-            }
-          }
-
-          this.areaList = city
-          console.log(city, 'city')
-        }
-      } catch (error) {
-        console.error('加载城市数据失败', error)
-      }
-    },
     // async getCityList() {
-    //   const res: City[] = await cityList()
-    //   if (res) {
-    //     this.cityList = res
-    //     const city: Area[] = []
-    //     for (let i = 0; i < res.length; i++) {
-    //       city.push({
-    //         text: res[i].name,
-    //         value: res[i].key,
-    //         children: []
-    //       })
-    //       if (res[i].children && res[i].children?.length) {
-    //         for (let j = 0; j < res[i].children.length; j++) {
-    //           city[i].children.push({
-    //             text: res[i].children[j].name,
-    //             value: res[i].children[j].key
-    //           })
+    //   try {
+    //     const response = await fetchWithBaseUrl('/data/cityList.json')
+    //     const res = (await response.json()) as City[]
+
+    //     if (res) {
+    //       this.cityList = res
+    //       const city: Area[] = []
+
+    //       for (let i = 0; i < res.length; i++) {
+    //         city.push({
+    //           text: res[i].name,
+    //           value: res[i].key,
+    //           children: []
+    //         })
+
+    //         if (res[i].children && res[i].children?.length) {
+    //           for (let j = 0; j < res[i].children.length; j++) {
+    //             city[i].children.push({
+    //               text: res[i].children[j].name,
+    //               value: res[i].children[j].key
+    //             })
+    //           }
     //         }
     //       }
+
+    //       this.areaList = city
+    //       console.log(city, 'city')
     //     }
-    //     this.areaList = city
-    //     console.log(city, 'city')
+    //   } catch (error) {
+    //     console.error('加载城市数据失败', error)
     //   }
     // },
+    async getCityList() {
+      const res: City[] = await cityList()
+      if (res) {
+        this.cityList = res
+        const city: Area[] = []
+        for (let i = 0; i < res.length; i++) {
+          city.push({
+            text: res[i].name,
+            value: res[i].key,
+            children: []
+          })
+          if (res[i].children && res[i].children?.length) {
+            for (let j = 0; j < res[i].children.length; j++) {
+              city[i].children.push({
+                text: res[i].children[j].name,
+                value: res[i].children[j].key
+              })
+            }
+          }
+        }
+        this.areaList = city
+        console.log(city, 'city')
+      }
+    },
 
     setCityList(data) {
       this.cityList = data

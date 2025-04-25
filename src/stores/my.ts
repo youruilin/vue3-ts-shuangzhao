@@ -3,7 +3,12 @@ import { userInfo } from '@/api/my'
 
 interface userInfoResponse {
   user_name
-  it_head
+  it_head: string
+  sex
+  birthday
+  work_time
+  city
+  area
 }
 
 export const myStore = defineStore({
