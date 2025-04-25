@@ -46,6 +46,7 @@ export function login(data: LoginData): Promise<LoginResponse> {
 }
 
 interface PolicyResponse {
+  records
   content: string
 }
 

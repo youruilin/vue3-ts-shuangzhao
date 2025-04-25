@@ -8,12 +8,22 @@ const state = ref({
 })
 
 const onClickLeft = () => history.back()
+// const getPolicyChange = async () => {
+//   const res = await getPolicy({
+//     id: 1
+//   })
+//   if (res) {
+//     state.value.htmlText = res.content
+//   } else {
+//     showToast('请求失败')
+//   }
+// }
 const getPolicyChange = async () => {
   const res = await getPolicy({
-    id: 1
+    id: 17
   })
   if (res) {
-    state.value.htmlText = res.content
+    state.value.htmlText = res.records[0].content
   } else {
     showToast('请求失败')
   }

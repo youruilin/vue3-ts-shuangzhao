@@ -39,7 +39,14 @@ const state = reactive({
   status: 0
 })
 
-const leftBack = () => history.back()
+const leftBack = () => {
+  try {
+    router.back()
+  } catch (e) {
+    console.error('返回失败', e)
+    router.push('/') // 兜底跳转
+  }
+}
 
 const getTaskDetail = async () => {
   const res = await taskDetail({

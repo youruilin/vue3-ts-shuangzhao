@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-
 import { taskStore } from '@/stores/task'
+import { showToast, type DatePickerColumnType } from 'vant'
+
+import { common } from '@/utils/common'
+
+import { uploadImg, userModify } from '@/api/my'
+
 const tsStore = taskStore()
 if (!tsStore.areaList.length) {
   console.log('测试进程')
@@ -10,41 +15,130 @@ if (!tsStore.areaList.length) {
   console.log(tsStore.areaList, 'if')
 }
 
+import { myStore } from '@/stores/my'
+
+const Mstore = myStore()
+
 const state = reactive({
+  fileList: [] as { url: string }[],
   userName: '',
   showSex: false,
   sex: '',
-  Birth: '',
   birthDay: '',
   showBirth: false,
   workDay: '',
   showWorkDay: false,
-  minDate: new Date(1980, 1, 1),
-  maxDate: new Date(2024, 1, 1),
+  minDate: new Date(1980, 0, 1),
+  maxDate: new Date(2007, 0, 1),
   showCity: false,
   city: '',
-  area: ''
+  area: '',
+  loading: false,
+  columnsType: ['year', 'month'] as DatePickerColumnType[]
 })
 
-const birthdayConfirm = value => {
-  state.birthDay = value.getFullYear() + '-' + (value.getMonth() + 1)
+const birthdayConfirm = values => {
+  state.birthDay = values.selectedValues[0] + '-' + values.selectedValues[1]
   state.showBirth = false
 }
-const workdayConfirm = value => {
-  state.birthDay = value.getFullYear() + '-' + (value.getMonth() + 1)
+const workdayConfirm = values => {
+  state.workDay = values.selectedValues[0] + '-' + values.selectedValues[1]
   state.showWorkDay = false
 }
 
 const sexList = [{ name: '男' }, { name: '女' }]
-const afterRead = async () => {}
+const afterRead = async file => {
+  file.status = 'uploading'
+  file.message = '上传中...'
+  let param = new FormData()
+  param.append('user', 'test')
+  param.append('file', file.file)
+  const res: { imageUrl: string } = await uploadImg(param)
+  file.url = res.imageUrl
+  file.status = 'success'
+  file.message = '上传成功'
+  state.fileList = [file]
+}
 
-const onSubmit = () => {}
-const clickLeft = () => {}
+const clickLeft = () => history.back()
 
-const cityConfirm = value => {
-  state.city = value[0].text
-  state.area = value[1].text
+const setInfo = () => {
+  state.userName = Mstore.userInfo.user_name
+  state.sex = common.sex(Mstore.userInfo.sex)
+  state.birthDay = Mstore.userInfo.birthday
+  state.workDay = Mstore.userInfo.work_time
+  state.city = Mstore.userInfo.city
+  state.area = Mstore.userInfo.area
+  if (Mstore.userInfo.it_head) {
+    state.fileList = [
+      {
+        url: Mstore.userInfo.it_head
+      }
+    ]
+  }
+}
+
+if (!Mstore.userInfo.user_name) {
+  ;(async function () {
+    await Mstore.getUserInfo()
+    setInfo()
+  })()
+} else {
+  setInfo()
+}
+
+const cityConfirm = values => {
+  state.city = values.selectedOptions[0].text + '-' + values.selectedOptions[1].text
+  state.area = values.selectedOptions[1].text
   state.showCity = false
+}
+
+const onSelect = item => {
+  state.sex = item.name
+  state.showSex = false
+}
+
+const onSubmit = async () => {
+  if (state.fileList.length === 0) {
+    showToast('请上传头像')
+    return
+  }
+  if (!state.userName) {
+    showToast('填写姓名')
+    return
+  }
+  if (!state.sex) {
+    showToast('您还没有选择性别')
+    return
+  }
+  if (!state.birthDay) {
+    showToast('请选择出生年月')
+    return
+  }
+  if (!state.workDay) {
+    showToast('请选择工作时间')
+    return
+  }
+  if (!state.city) {
+    showToast('请选择城市')
+    return
+  }
+  state.loading = true
+  const res = await userModify({
+    user_name: state.userName,
+    sex: state.sex === '男' ? 1 : state.sex === '女' ? 2 : '',
+    birthday: state.birthDay,
+    work_time: state.workDay,
+    city: state.city,
+    area: state.area,
+    it_head: state.fileList[0].url,
+    type: 1
+  })
+  if (res) {
+    Mstore.getUserInfo()
+  }
+  showToast('修改成功')
+  state.loading = false
 }
 </script>
 
@@ -54,7 +148,12 @@ const cityConfirm = value => {
   <div class="user-page">
     <van-form @submit="onSubmit">
       <div class="user-pic">
-        <van-uploader accept=".jpg,.png" :after-read="afterRead" :max-count="1" />
+        <van-uploader
+          v-model="state.fileList"
+          accept=".jpg,.png"
+          :after-read="afterRead"
+          :max-count="1"
+        />
       </div>
       <div class="user-item">
         <h5>姓名</h5>
@@ -75,6 +174,7 @@ const cityConfirm = value => {
           :actions="sexList"
           cancel-text="取消"
           close-on-click-action
+          @select="onSelect"
         />
       </div>
       <div class="user-item">
@@ -84,7 +184,7 @@ const cityConfirm = value => {
           readonly
           is-link
           label=""
-          placeholder="请选择您的出生年月日"
+          placeholder="请选择您的出生年月"
           @click="state.showBirth = true"
         />
         <van-action-sheet v-model:show="state.showBirth">
@@ -92,7 +192,9 @@ const cityConfirm = value => {
             title="选择日期"
             :min-date="state.minDate"
             :max-date="state.maxDate"
+            :columns-type="state.columnsType"
             @confirm="birthdayConfirm"
+            @cancel="state.showBirth = false"
           />
         </van-action-sheet>
       </div>
@@ -106,12 +208,14 @@ const cityConfirm = value => {
           placeholder="请选择您的工作时间"
           @click="state.showWorkDay = true"
         />
-        <van-action-sheet v-model:show="state.showWorkDay" title="标题">
+        <van-action-sheet v-model:show="state.showWorkDay">
           <van-date-picker
             title="选择日期"
             :min-date="state.minDate"
             :max-date="state.maxDate"
+            :columns-type="state.columnsType"
             @confirm="workdayConfirm"
+            @cancel="state.showWorkDay = false"
           />
         </van-action-sheet>
       </div>
@@ -133,7 +237,7 @@ const cityConfirm = value => {
           />
         </van-action-sheet>
       </div>
-      <button class="wy-confirm-btn">提交修改</button>
+      <button class="wy-confirm-btn" native-type="submit">提交修改</button>
     </van-form>
   </div>
 </template>
@@ -144,6 +248,16 @@ const cityConfirm = value => {
 }
 :deep(.van-uploader__upload) {
   border-radius: 50%;
+}
+:deep(.van-image) {
+  border-radius: 50%;
+}
+:deep(.van-cell) {
+  padding: 0.8rem 0 0.6rem;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  color: #999;
+  font-weight: 100;
 }
 .user-page {
   margin: 0 0.6rem;
@@ -180,6 +294,7 @@ const cityConfirm = value => {
     bottom: 0;
     margin: 0 0.6rem 0.6rem;
     font-size: 0.8rem;
+    color: #fff;
   }
 }
 </style>

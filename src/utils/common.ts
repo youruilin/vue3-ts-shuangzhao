@@ -44,3 +44,13 @@ export const directives = (app: {
     }
   })
 }
+
+export const common = {
+  sex: function (type: number) {
+    if (type === 1) {
+      return '男'
+    } else if (type === 2) {
+      return '女'
+    } else return ''
+  }
+}
