@@ -1,1 +1,0 @@
-import{_ as e,r as t,L as o,c as s,o as n,ab as r}from"./index-CQ0oNnf3.js";const p={__name:"DepositExplain",setup(c){const a=t("");return o(()=>{a.value=import.meta.url}),(l,_)=>(n(),s("div",null,r(a.value),1))}},u=e(p,[["__scopeId","data-v-7ab015e1"]]);export{u as default};
