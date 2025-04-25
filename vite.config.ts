@@ -38,8 +38,8 @@ export default defineConfig({
     port: 5173,
     open: true,
     proxy: {
-      // '/api': 'https://aws-ele.iooio.cn'
-      '/api': 'https://imooc.zcwytd.com'
+      '/api': 'https://aws-ele.iooio.cn'
+      // '/api': 'https://imooc.zcwytd.com'
     },
     cors: true // 在开发阶段不需要手动设置服务器端的 CORS 头信息即可进行跨域请求，节省时间。
   },

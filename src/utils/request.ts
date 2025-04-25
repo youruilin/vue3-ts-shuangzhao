@@ -3,8 +3,7 @@ import { showToast } from 'vant'
 const baseURL = import.meta.env.VITE_API_URL || '/api'
 const service = axios.create({
   baseURL,
-  timeout: 10000,
-  withCredentials: true // 如果你需要传递 cookies 或 token
+  timeout: 10000
 })
 // 发起请求之前的拦截器
 service.interceptors.request.use(
