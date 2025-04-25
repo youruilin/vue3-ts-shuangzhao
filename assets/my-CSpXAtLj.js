@@ -1,0 +1,1 @@
+import{ar as o}from"./index-BG69k35g.js";import{b as s}from"./my-J9wFbR2q.js";const n=o({id:"my",state:()=>({userInfo:{}}),actions:{async getUserInfo(){const r=await s();r&&(this.userInfo=r)}}});export{n as m};
