@@ -1,0 +1,1 @@
+import{_ as a,r as t,L as o,c as s,o as n,ab as r}from"./index-D_KD6bzL.js";const c={__name:"index",setup(_){const e=t("");return o(()=>{e.value=import.meta.url}),(l,p)=>(n(),s("div",null,r(e.value),1))}},u=a(c,[["__scopeId","data-v-dce39598"]]);export{u as default};
