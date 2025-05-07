@@ -9,6 +9,7 @@ interface userInfoResponse {
   work_time
   city
   area
+  account_price
 }
 
 export const myStore = defineStore({

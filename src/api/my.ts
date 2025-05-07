@@ -46,3 +46,21 @@ export function collectList<T = CollectListResponse>(): Promise<T> {
     params: {}
   })
 }
+
+// 提现接口
+export function transferList() {
+  return request({
+    url: '/my/transfer/userList',
+    method: 'get',
+    params: {}
+  })
+}
+
+// 收入接口
+export function incomeList() {
+  return request({
+    url: '/admin/task/purchaseRecord',
+    method: 'get',
+    params: {}
+  })
+}

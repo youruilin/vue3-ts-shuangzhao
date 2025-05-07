@@ -22,10 +22,10 @@ const gotoPage = path => {
     <div class="my-info">
       <img v-if="store.userInfo.it_head" :src="store.userInfo.it_head" alt="" />
       <img v-else src="@/assets/img/icon/icon-message.png" alt="" />
-      <div @click="gotoPage('/my/user')">
+      <div>
         <h3>{{ store.userInfo.user_name }}<span></span></h3>
-        <p>IT企业人才</p>
-        <i></i>
+        <p @click="gotoPage('/my/user')">IT企业人才</p>
+        <i @click="gotoPage('/my/account')"></i>
       </div>
     </div>
     <div class="my-type">
@@ -102,11 +102,11 @@ const gotoPage = path => {
 
 :deep(.van-nav-bar .van-icon) {
   font-size: 1.12rem;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 :deep(.van-hairline--bottom:after) {
-  border: 0;
+  border-bottom: 0 !important;
 }
 
 :deep(.van-nav-bar__right) {
