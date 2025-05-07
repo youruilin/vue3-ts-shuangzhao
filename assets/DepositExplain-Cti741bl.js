@@ -1,0 +1,1 @@
+import{_ as e,r as t,L as o,c as s,o as n,ac as r}from"./index-DXvZfdQh.js";const c={__name:"DepositExplain",setup(p){const a=t("");return o(()=>{a.value=import.meta.url}),(l,_)=>(n(),s("div",null,r(a.value),1))}},u=e(c,[["__scopeId","data-v-7ab015e1"]]);export{u as default};
