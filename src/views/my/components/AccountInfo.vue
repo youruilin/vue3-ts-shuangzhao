@@ -22,7 +22,7 @@ console.log('accountInfo setup start')
       <label
         >账户余额 <van-icon name="question-o" @click="gotoPath('/my/account/CoinExplain')"
       /></label>
-      <span>提现<van-icon name="arrow" /></span>
+      <span @click="gotoPath('/my/account/AcountAdvance')">提现<van-icon name="arrow" /></span>
     </p>
     <!-- 这里，逻辑上的瑕疵居然会导致该组件重复渲染，真是晕了 -->
     <h3>{{ store.userInfo.account_price?.toFixed(2) ?? '0.00' }}</h3>

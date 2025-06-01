@@ -47,7 +47,7 @@ export function collectList<T = CollectListResponse>(): Promise<T> {
   })
 }
 
-// 提现接口
+// 提现记录接口
 export function transferList() {
   return request({
     url: '/my/transfer/userList',
@@ -56,11 +56,20 @@ export function transferList() {
   })
 }
 
-// 收入接口
+// 收入记录接口
 export function incomeList() {
   return request({
     url: '/admin/task/purchaseRecord',
     method: 'get',
     params: {}
+  })
+}
+
+// 准提现接口
+export function withdraw<T>(data): Promise<T> {
+  return request({
+    url: '/my/apply/transfer',
+    method: 'post',
+    data
   })
 }
