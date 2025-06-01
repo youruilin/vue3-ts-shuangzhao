@@ -1,0 +1,1 @@
+import{at as o}from"./index-Dddzerk9.js";import{b as r}from"./my-CTrivEDZ.js";const n=o({id:"my",state:()=>({userInfo:{}}),actions:{async getUserInfo(){const t=await r();t&&(this.userInfo=t)}}});export{n as m};
