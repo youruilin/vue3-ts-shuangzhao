@@ -19,12 +19,12 @@ const gotoPage = path => {
         <van-icon name="setting-o" @click="gotoPage('/my/set')" />
       </template>
     </van-nav-bar>
-    <div class="my-info">
+    <div class="my-info" @click="gotoPage('/my/user')">
       <img v-if="store.userInfo.it_head" :src="store.userInfo.it_head" alt="" />
       <img v-else src="@/assets/img/icon/icon-message.png" alt="" />
       <div>
         <h3>{{ store.userInfo.user_name }}<span></span></h3>
-        <p @click="gotoPage('/my/user')">IT企业人才</p>
+        <p>IT企业人才</p>
         <i @click="gotoPage('/my/account')"></i>
       </div>
     </div>
