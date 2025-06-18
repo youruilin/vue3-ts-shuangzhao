@@ -135,7 +135,10 @@ const getContractList = async () => {
     curr_identity: 3
   })
   if (res.records) {
-    state.list = res.records
+    // 如果返回的records是空数组，则维持原有填充数据
+    if (res.records.length === 0) {
+      return
+    }
   } else {
     state.list = res.records
   }
